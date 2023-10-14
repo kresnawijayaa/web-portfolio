@@ -251,7 +251,7 @@ export default function Project() {
                 <img
                   alt="House"
                   src="https://kresna-wijaya.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd762c2d6-e1f6-49e0-bf82-a68d85a1ec0b%2FImage_4.png?table=block&id=c09b8270-0ae4-4432-b64b-5f7a68d33d7f&spaceId=4f224007-4272-4b9b-93ee-ddda2dc6c347&width=2000&userId=&cache=v2"
-                  className="absolute inset-0 h-[340px] w-full object-cover rounded-xl my-auto drop-shadow "
+                  className="absolute inset-0 lg:h-[340px] lg:w-full h-[200px] w-full object-cover lg:rounded-xl my-auto drop-shadow "
                 />
               </div>
             </div>
@@ -267,7 +267,7 @@ export default function Project() {
                 <img
                   alt="House"
                   src={gdImage}
-                  className="absolute inset-0 h-[340px] w-full object-cover rounded-xl my-auto drop-shadow "
+                  className="absolute inset-0 lg:h-[340px] lg:w-full h-[200px] w-full object-cover lg:rounded-xl my-auto drop-shadow "
                 />
               </div>
             </div>

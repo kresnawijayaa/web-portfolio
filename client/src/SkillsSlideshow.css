@@ -1,0 +1,126 @@
+.slider {
+  height: 160px;
+  margin: auto;
+  position: relative;
+  width: 90%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.slide-track {
+  display: flex;
+  width: calc(250px * 40); /* dikali jumlah data */
+  animation: scroll-left-1 40s linear infinite;
+}
+
+.slide-track2 {
+  display: flex;
+  width: calc(250px * 40);
+  animation: scroll-right-2 30s linear infinite;
+}
+
+.slide-track3 {
+  display: flex;
+  width: calc(250px * 40); /* dikali jumlah data */
+  animation: scroll-left-1 30s linear infinite;
+}
+
+.slide-track:hover {
+  animation-play-state: paused;
+}
+
+.slide-track2:hover {
+  animation-play-state: paused;
+}
+
+.slide-track3:hover {
+  animation-play-state: paused;
+}
+
+.skill-name {
+  display: none;
+  text-align: center;
+  padding: 8px;
+  /* background-color: rgba(255, 255, 255, 0.7); */
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  width: 100%;
+  transition: bottom 0.3s;
+}
+
+.slide:hover .skill-name {
+  display: block;
+}
+
+@keyframes scroll-left-1 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-150px * 20));
+  }
+}
+
+@keyframes scroll-right-2 {
+  0% {
+    transform: translateX(calc(-150px * 20));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scroll-left-3 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-150px * 20));
+  }
+}
+
+.slide {
+  height: 60px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  perspective: 100px;
+  margin-right: 40px;
+}
+
+img {
+  width: 100%;
+  transition: transform 1s;
+}
+
+img:hover {
+  transform: translateZ(20px);
+}
+
+.slider::before,
+.slider::after {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 15%;
+  z-index: 2;
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}

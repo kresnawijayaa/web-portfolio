@@ -4,6 +4,7 @@ import NotFound from "../pages/NotFound";
 import Home from "../pages/Home";
 import About from "../pages/About";
 import Project from "../pages/Project";
+import ComingSoon from "../pages/ComingSoon";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/project",
         element: <Project />,
+      },
+      {
+        path: "/playground",
+        element: <ComingSoon />,
       },
     ],
   },

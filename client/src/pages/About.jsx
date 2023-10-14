@@ -1,213 +1,766 @@
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+
+import "../SkillsSlideshow.css";
+import "../AnimatedElement.css";
+
+const skillData = [
+  {
+    name: "HTML5",
+    logo: "https://cdn-icons-png.flaticon.com/512/1051/1051277.png",
+  },
+  {
+    name: "CSS",
+    logo: "https://cdn-icons-png.flaticon.com/512/732/732190.png",
+  },
+  {
+    name: "JavaScript",
+    logo: "https://cdn-icons-png.flaticon.com/128/5968/5968292.png",
+  },
+  {
+    name: "Vue JS",
+    logo: "https://docs.vuejs.id/images/logo.png",
+  },
+  {
+    name: "React JS",
+    logo: "https://cdn-icons-png.flaticon.com/128/1260/1260667.png",
+  },
+  {
+    name: "React Native",
+    logo: "https://cdn.jsdelivr.net/gh/kristerkari/react-native-svg-transformer/images/react-native-logo.png",
+  },
+  {
+    name: "Tailwind",
+    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/96/file_type_tailwind_icon_130128.png",
+  },
+  {
+    name: "jQuery",
+    logo: "https://cdn.icon-icons.com/icons2/2699/PNG/512/jquery_logo_icon_167804.png",
+  },
+  {
+    name: "Node JS",
+    logo: "https://cdn-icons-png.flaticon.com/128/5968/5968322.png",
+  },
+  {
+    name: "Express JS",
+    logo: "https://adware-technologies.s3.amazonaws.com/uploads/technology/thumbnail/20/express-js.png",
+  },
+  {
+    name: "Sequelize",
+    logo: "https://sequelize.org/img/logo.svg",
+  },
+  {
+    name: "PostgreSQL",
+    logo: "https://www.postgresql.org/media/img/about/press/elephant.png",
+  },
+  {
+    name: "MongoDB",
+    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_mongo_icon_130383.png",
+  },
+  {
+    name: "Firestore",
+    logo: "https://static-00.iconduck.com/assets.00/file-type-firestore-icon-1780x2048-0rzupks3.png",
+  },
+  {
+    name: "Docker",
+    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/96/file_type_docker_icon_130643.png",
+  },
+  {
+    name: "Redux",
+    logo: "https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg",
+  },
+  {
+    name: "Pinia",
+    logo: "https://pinia.vuejs.org/logo.svg",
+  },
+  {
+    name: "GraphQL",
+    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_graphql_icon_130564.png",
+  },
+  {
+    name: "Apollo",
+    logo: "https://lh3.googleusercontent.com/KtHUawUCvmUZ35V1K66as9B8a5Lqjjt4Yg--3YX-s5cyyuuA7_PPChegV4SVJ1rsXEv8GFWNrUv7yiHVVdlN4Q",
+  },
+  {
+    name: "Redis",
+    logo: "https://cdn.icon-icons.com/icons2/2415/PNG/96/redis_original_logo_icon_146368.png",
+  },
+  {
+    name: "Jest",
+    logo: "https://cdn.freebiesupply.com/logos/large/2x/jest-logo-png-transparent.png",
+  },
+  {
+    name: "HTML5",
+    logo: "https://cdn-icons-png.flaticon.com/512/1051/1051277.png",
+  },
+  {
+    name: "CSS",
+    logo: "https://cdn-icons-png.flaticon.com/512/732/732190.png",
+  },
+  {
+    name: "JavaScript",
+    logo: "https://cdn-icons-png.flaticon.com/128/5968/5968292.png",
+  },
+  {
+    name: "Vue JS",
+    logo: "https://docs.vuejs.id/images/logo.png",
+  },
+  {
+    name: "React JS",
+    logo: "https://cdn-icons-png.flaticon.com/128/1260/1260667.png",
+  },
+  {
+    name: "React Native",
+    logo: "https://cdn.jsdelivr.net/gh/kristerkari/react-native-svg-transformer/images/react-native-logo.png",
+  },
+  {
+    name: "Tailwind",
+    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/96/file_type_tailwind_icon_130128.png",
+  },
+  {
+    name: "jQuery",
+    logo: "https://cdn.icon-icons.com/icons2/2699/PNG/512/jquery_logo_icon_167804.png",
+  },
+  {
+    name: "Node JS",
+    logo: "https://cdn-icons-png.flaticon.com/128/5968/5968322.png",
+  },
+  {
+    name: "Express JS",
+    logo: "https://adware-technologies.s3.amazonaws.com/uploads/technology/thumbnail/20/express-js.png",
+  },
+  {
+    name: "Sequelize",
+    logo: "https://sequelize.org/img/logo.svg",
+  },
+  {
+    name: "PostgreSQL",
+    logo: "https://www.postgresql.org/media/img/about/press/elephant.png",
+  },
+  {
+    name: "MongoDB",
+    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_mongo_icon_130383.png",
+  },
+  {
+    name: "Firestore",
+    logo: "https://static-00.iconduck.com/assets.00/file-type-firestore-icon-1780x2048-0rzupks3.png",
+  },
+  {
+    name: "Docker",
+    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/96/file_type_docker_icon_130643.png",
+  },
+  {
+    name: "Redux",
+    logo: "https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg",
+  },
+  {
+    name: "Pinia",
+    logo: "https://pinia.vuejs.org/logo.svg",
+  },
+  {
+    name: "GraphQL",
+    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_graphql_icon_130564.png",
+  },
+  {
+    name: "Apollo",
+    logo: "https://lh3.googleusercontent.com/KtHUawUCvmUZ35V1K66as9B8a5Lqjjt4Yg--3YX-s5cyyuuA7_PPChegV4SVJ1rsXEv8GFWNrUv7yiHVVdlN4Q",
+  },
+  {
+    name: "Redis",
+    logo: "https://cdn.icon-icons.com/icons2/2415/PNG/96/redis_original_logo_icon_146368.png",
+  },
+  {
+    name: "Jest",
+    logo: "https://cdn.freebiesupply.com/logos/large/2x/jest-logo-png-transparent.png",
+  },
+  {
+    name: "HTML5",
+    logo: "https://cdn-icons-png.flaticon.com/512/1051/1051277.png",
+  },
+  {
+    name: "CSS",
+    logo: "https://cdn-icons-png.flaticon.com/512/732/732190.png",
+  },
+  {
+    name: "JavaScript",
+    logo: "https://cdn-icons-png.flaticon.com/128/5968/5968292.png",
+  },
+  {
+    name: "Vue JS",
+    logo: "https://docs.vuejs.id/images/logo.png",
+  },
+  {
+    name: "React JS",
+    logo: "https://cdn-icons-png.flaticon.com/128/1260/1260667.png",
+  },
+  {
+    name: "React Native",
+    logo: "https://cdn.jsdelivr.net/gh/kristerkari/react-native-svg-transformer/images/react-native-logo.png",
+  },
+  {
+    name: "Tailwind",
+    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/96/file_type_tailwind_icon_130128.png",
+  },
+  {
+    name: "jQuery",
+    logo: "https://cdn.icon-icons.com/icons2/2699/PNG/512/jquery_logo_icon_167804.png",
+  },
+  {
+    name: "Node JS",
+    logo: "https://cdn-icons-png.flaticon.com/128/5968/5968322.png",
+  },
+  {
+    name: "Express JS",
+    logo: "https://adware-technologies.s3.amazonaws.com/uploads/technology/thumbnail/20/express-js.png",
+  },
+  {
+    name: "Sequelize",
+    logo: "https://sequelize.org/img/logo.svg",
+  },
+  {
+    name: "PostgreSQL",
+    logo: "https://www.postgresql.org/media/img/about/press/elephant.png",
+  },
+  {
+    name: "MongoDB",
+    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_mongo_icon_130383.png",
+  },
+  {
+    name: "Firestore",
+    logo: "https://static-00.iconduck.com/assets.00/file-type-firestore-icon-1780x2048-0rzupks3.png",
+  },
+  {
+    name: "Docker",
+    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/96/file_type_docker_icon_130643.png",
+  },
+  {
+    name: "Redux",
+    logo: "https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg",
+  },
+  {
+    name: "Pinia",
+    logo: "https://pinia.vuejs.org/logo.svg",
+  },
+  {
+    name: "GraphQL",
+    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_graphql_icon_130564.png",
+  },
+  {
+    name: "Apollo",
+    logo: "https://lh3.googleusercontent.com/KtHUawUCvmUZ35V1K66as9B8a5Lqjjt4Yg--3YX-s5cyyuuA7_PPChegV4SVJ1rsXEv8GFWNrUv7yiHVVdlN4Q",
+  },
+  {
+    name: "Redis",
+    logo: "https://cdn.icon-icons.com/icons2/2415/PNG/96/redis_original_logo_icon_146368.png",
+  },
+  {
+    name: "Jest",
+    logo: "https://cdn.freebiesupply.com/logos/large/2x/jest-logo-png-transparent.png",
+  },
+  // Add more skills
+];
+
+const skillData2 = [
+  {
+    name: "AWS",
+    logo: "https://cdn.icon-icons.com/icons2/2407/PNG/96/aws_icon_146074.png",
+  },
+  {
+    name: "Firebase",
+    logo: "https://cdn.icon-icons.com/icons2/2699/PNG/512/firebase_logo_icon_171157.png",
+  },
+  {
+    name: "Github",
+    logo: "https://cdn-icons-png.flaticon.com/512/25/25231.png",
+  },
+  {
+    name: "VSCode",
+    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_vscode_icon_130084.png",
+  },
+  {
+    name: "NPM",
+    logo: "https://cdn.icon-icons.com/icons2/2415/PNG/96/npm_original_wordmark_logo_icon_146402.png",
+  },
+  {
+    name: "Postman",
+    logo: "https://www.svgrepo.com/show/354202/postman-icon.svg",
+  },
+  {
+    name: "Vite",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1039px-Vitejs-logo.svg.png",
+  },
+  {
+    name: "Ubuntu",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo-ubuntu_cof-orange-hex.svg/1200px-Logo-ubuntu_cof-orange-hex.svg.png",
+  },
+  {
+    name: "AWS",
+    logo: "https://cdn.icon-icons.com/icons2/2407/PNG/96/aws_icon_146074.png",
+  },
+  {
+    name: "Firebase",
+    logo: "https://cdn.icon-icons.com/icons2/2699/PNG/512/firebase_logo_icon_171157.png",
+  },
+  {
+    name: "Github",
+    logo: "https://cdn-icons-png.flaticon.com/512/25/25231.png",
+  },
+  {
+    name: "VSCode",
+    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_vscode_icon_130084.png",
+  },
+  {
+    name: "NPM",
+    logo: "https://cdn.icon-icons.com/icons2/2415/PNG/96/npm_original_wordmark_logo_icon_146402.png",
+  },
+  {
+    name: "Postman",
+    logo: "https://www.svgrepo.com/show/354202/postman-icon.svg",
+  },
+  {
+    name: "Vite",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1039px-Vitejs-logo.svg.png",
+  },
+  {
+    name: "Ubuntu",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo-ubuntu_cof-orange-hex.svg/1200px-Logo-ubuntu_cof-orange-hex.svg.png",
+  },
+  {
+    name: "AWS",
+    logo: "https://cdn.icon-icons.com/icons2/2407/PNG/96/aws_icon_146074.png",
+  },
+  {
+    name: "Firebase",
+    logo: "https://cdn.icon-icons.com/icons2/2699/PNG/512/firebase_logo_icon_171157.png",
+  },
+  {
+    name: "Github",
+    logo: "https://cdn-icons-png.flaticon.com/512/25/25231.png",
+  },
+  {
+    name: "VSCode",
+    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_vscode_icon_130084.png",
+  },
+  {
+    name: "NPM",
+    logo: "https://cdn.icon-icons.com/icons2/2415/PNG/96/npm_original_wordmark_logo_icon_146402.png",
+  },
+  {
+    name: "Postman",
+    logo: "https://www.svgrepo.com/show/354202/postman-icon.svg",
+  },
+  {
+    name: "Vite",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1039px-Vitejs-logo.svg.png",
+  },
+  {
+    name: "Ubuntu",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo-ubuntu_cof-orange-hex.svg/1200px-Logo-ubuntu_cof-orange-hex.svg.png",
+  },
+  {
+    name: "AWS",
+    logo: "https://cdn.icon-icons.com/icons2/2407/PNG/96/aws_icon_146074.png",
+  },
+  {
+    name: "Firebase",
+    logo: "https://cdn.icon-icons.com/icons2/2699/PNG/512/firebase_logo_icon_171157.png",
+  },
+  {
+    name: "Github",
+    logo: "https://cdn-icons-png.flaticon.com/512/25/25231.png",
+  },
+  {
+    name: "VSCode",
+    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_vscode_icon_130084.png",
+  },
+  {
+    name: "NPM",
+    logo: "https://cdn.icon-icons.com/icons2/2415/PNG/96/npm_original_wordmark_logo_icon_146402.png",
+  },
+  {
+    name: "Postman",
+    logo: "https://www.svgrepo.com/show/354202/postman-icon.svg",
+  },
+  {
+    name: "Vite",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1039px-Vitejs-logo.svg.png",
+  },
+  {
+    name: "Ubuntu",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo-ubuntu_cof-orange-hex.svg/1200px-Logo-ubuntu_cof-orange-hex.svg.png",
+  },
+  {
+    name: "AWS",
+    logo: "https://cdn.icon-icons.com/icons2/2407/PNG/96/aws_icon_146074.png",
+  },
+  {
+    name: "Firebase",
+    logo: "https://cdn.icon-icons.com/icons2/2699/PNG/512/firebase_logo_icon_171157.png",
+  },
+  {
+    name: "Github",
+    logo: "https://cdn-icons-png.flaticon.com/512/25/25231.png",
+  },
+  {
+    name: "VSCode",
+    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_vscode_icon_130084.png",
+  },
+  {
+    name: "NPM",
+    logo: "https://cdn.icon-icons.com/icons2/2415/PNG/96/npm_original_wordmark_logo_icon_146402.png",
+  },
+  {
+    name: "Postman",
+    logo: "https://www.svgrepo.com/show/354202/postman-icon.svg",
+  },
+  {
+    name: "Vite",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1039px-Vitejs-logo.svg.png",
+  },
+  {
+    name: "Ubuntu",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo-ubuntu_cof-orange-hex.svg/1200px-Logo-ubuntu_cof-orange-hex.svg.png",
+  },
+  {
+    name: "AWS",
+    logo: "https://cdn.icon-icons.com/icons2/2407/PNG/96/aws_icon_146074.png",
+  },
+  {
+    name: "Firebase",
+    logo: "https://cdn.icon-icons.com/icons2/2699/PNG/512/firebase_logo_icon_171157.png",
+  },
+  {
+    name: "Github",
+    logo: "https://cdn-icons-png.flaticon.com/512/25/25231.png",
+  },
+  {
+    name: "VSCode",
+    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_vscode_icon_130084.png",
+  },
+  {
+    name: "NPM",
+    logo: "https://cdn.icon-icons.com/icons2/2415/PNG/96/npm_original_wordmark_logo_icon_146402.png",
+  },
+  {
+    name: "Postman",
+    logo: "https://www.svgrepo.com/show/354202/postman-icon.svg",
+  },
+  {
+    name: "Vite",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1039px-Vitejs-logo.svg.png",
+  },
+  {
+    name: "Ubuntu",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo-ubuntu_cof-orange-hex.svg/1200px-Logo-ubuntu_cof-orange-hex.svg.png",
+  },
+  // Add more skills
+];
+
+const skillData3 = [
+  {
+    name: "Figma",
+    logo: "https://logowik.com/content/uploads/images/figma.jpg",
+  },
+  {
+    name: "Whimsical",
+    logo: "https://i.pinimg.com/736x/ea/2a/b2/ea2ab287b40acfe28348c71eb780d11c.jpg",
+  },
+  {
+    name: "Miro",
+    logo: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAyVBMVEX/0C8FADj///8AADj/2C4xJzf/0i//1S//1i//zyn/zh38zS//zyXXrzH5yy/ovTD/zADzxi9CNTefgTPjuTA9MTfuwjCPdDT//PT/5p9rVzVyXDVeTDarizPAnDKYfDT/1U25lzKEazTKpDEkHDe1kzJ3YTX/7Ln/+OP//vj/34DdtDAdFjddSzaQdTQpIDdVRDZKOzb/9df/5Zg1Kjf/00D/3HH/7b7/6Kf/8cv/11n/+eiAZzUZEzcPCjj/3y7/4In/3nn/2WNTECgcAAAP20lEQVR4nN1da0PTTBNdsiFpQsUqoi2iVkQLqKBgEVCBh///o97cr7szZ5vsC+l8zjZ7Mvezk1Q4mEzPF7P7y5vllnhs2VrOH+5nv8+n4M4Fgm5xsgwjGQfBY8NLJRiPo+0s/1sgKFmER7PlJML22KAUEozDyfzqT0eEv28m4VNEl0sQhg/XqyM8vhJPGl4qQSiujldCeDwLw8fePSaRIi/0GLUIF+OB4EskDBaGCI/mQ8IXSzg/MkF4MXn6/teUYDKDEU4Hp8BUwrkqdSgQXo/Hj73XFSUIFZmjjXA2eeyNdhCFpbYQngzTQnMJTziEl8MGGEG8pBE+DB1gBPGBQjh4DcbS0GIN4cB9MJe6L1YRXg05ilYlnKkRXq8LwChpXKsQ/hlqnldJ+EeBcL5OCIN5G+HFekSZXMKLJsKj9XHCVCZHDYTz4bVLtBR2miFcrJeNxhIuqgiP1ynK5DI+riCcrZ8Ki2CTIDwmAHquTjzNipFuga9Z4OsWjHS3ACEeFwgJFXrbh5tq+fVcvWN//0y94PCjq16w80294OzLlu6hYAhnBULqstGB1Mkr5f29Z9oFb5RK8ba0C+RHraUgEuQIf1Ne6L2WG2qR8utItcL9oV3xY0u1Yf+j/hY/nncw1SScxghvyFzo7uvv/0wFMVKiZsGG/PZKtcLd1a+Qp97KphrcpAj/0IGU2rB8r3It97vhCuIW0YrDTyubalzYRAivmFQxeklsWBU9vK/Uht8o9uvu6VdES/ZeKN2Bl/AqQcgVbHo3ie/+TgFRb9gbamf0XkhiRXyX1bwxLt2EM2Vr7hF1e7nThkgpMXbG5y2VjE6pFRHEl69WMtXJNELIl6T+DrnhN22IpBJVzuh5tyTEaM3BKskxiqbCOWFrUm+btqG/rcfrvWJU0nJGyhWyRRsrRJzxSYRwyfdNo7/0ht+2vMR9y6ik5YxExiiey/fXphEnWDpiChTd3nNmv/u+Z7ai7YxUxigx7jRvxEk4FedIW0FkuPTWP7ymShgltp2RzBjFos1nZqYanguo9/U+cfvdbVhdpEQW4mlts1F5yEOMVn3ZNok44ULMoOZ39Ivb79mLOkT3C7tf+V1U14w+AAhjjJ8N1Di+EHwojcX/zMaB29e1ZxslcX6z/6rOyGaMAuJPPDmOT8QDREF5HmtCcqPeMLp0AM42W3VGPmMUy0590FSDBwGSbIAJNbopphIr9lpRh6uvgJvLbsHkGMzFEnsWyH4b3ZR7gOxX7pfOiGSM4l5gOb4U6DglEDmi236q+hWixGjRYemMSMYobwaV4/i4KFOI5Xet+tXoDRg5ikVYxijW7X7tRHI0RU9O1O5a6aZAJUaLPuQ7BTNGsfBAdOKq6sJm/eymlW6K6Ykqq3JnBGJ2feHG+x7V6J5hGjktIDJNSXXRWZZN4YyRL4zL8b4w8lk/u+lB8Vhxo4uCVPpgCM5Et/KDaTmuE0+AGpFfcogxFYpvNFlF8wPqlabluFYM3Cp/qiOSHmiuSpyR7UpUGM3Kca0gpWZ2y7ybMlBitGozdkajjFFi/NwLRPzxypdZcDRRYuaMZhmjWPquD4gGPiJ3txOIZuE/zjUe2mM0lj7vxRXdnzjEw7RhHL0zS3B7nmeaMZJ1v1YkjRviQ1k/u2faMJpqJHZGuMeoLPvQD0LhfjOpG5OG0TdTYuKMeI9RrPraU0402m7WMI42TCHu3JlmDPlNffpqLkbRP2sYTZUYOyNYs5cr3vRkpHBHlN84bow8/9AY4i5AgdQWPOut/tYfCavvHB+/oQVtbZ3Z5d+afG0HMWnDN9KG0XONlWgo8qA3IzXiUrK777irJDize3zqtdc3bm9O3dGmVYhS9hVJE/HfG8eNv3fma25NLv7So5FGZuobZP1sB2/vuFOB5ooz9rCtenWvRsodCau3sGdQ7iULvhgEJymVYzqri1nWzyGaea80MWu516sbimQQzBShaeF2aBKx5fseKcVE2APeziI/GFR6vRup4EYtehD53KBqk/t9G+kKWd9Q5K87vNXe6ImiqYtrGPwjMcpvO3d4MJPyRe9Gas5Mx+ybSeh4bVDfyx/9G6k5NRHHDoM9/zRp8vsh2VpiRBLG2/iBssnxxZ9dk1D62oKRmpy5ZNt4j1tp5FgGGVe+7LUmLYUZBGtt2oA2jaI/dFaZXb1jxUjBI+FyGwfwgUB08Uffw6tS+cqKkQrDrC9f4XVmXKJs41dv2oikiZgkDLl7h4fSeNLRYCbjgyUjNSu/5bs7XONRs2fw9OwZKTAPWu5Cbvlw/pTSN6As5Zk1FZqkC/nWxQNNTJuNYI33yAS3EJpUHc9GeIsfc7vuPxhhf0xwUwyoernp48SHPPRNRjj6JdlqMsKJ4ahwxK+OT8nwXNsrE9xEiPMSctuA9I5jIx5K+ybZKmJwfCH3XHT8K0vgsE3LjR6PKxpiQAtHzxkPS0mVCdt0z0xwTQwyVhQ64LAkk1bIR1OtRSM1OLyQO1F+A2ZT04vjfh0e34g6FntuiOf7mEWB65+EVILJSrlnz0gNHGvfjZUCXpwwn9iY54YNJrgUPN/LTz4+aJTS82golXLbnhvi0e5f5CrwKXeqFNRrbTDBhbhwfjsd4Y2WlOlwIui1VpjgTPB8n0R/dFYsTW+eB5ZLNo0Uzvdp9N9Ct5ykN/Tx2WGCM4HzfeJYaPSXt4nVoaHUEhOcCmx2SUpGNZ51s2CclpaY4ETgQ+B0z+jwdDZ8BzKx8qVFI4XzfUoTjZgXUPOLz9Itg2ywNSY4FjTfy5/JnsHUkvOC5Nv/lcv7mQlWywicjZQfkxFaNDamWwbZ4L5mgtXiou96JgkcjI25X4Eu0NtMsEpgpaQkClhm5sEfLPF6mwlWCRz9s9iI1bD5WTWWa+WhxUiKRv/8YM+HpvaKCgULpRaZYHgPeWEMNstpVIqfH/SGnEUmGH7BK4szYOQoej2MlouaMnsA0X4258Gw5FmMpmG/bpMJxuvGzI6wfrYgJDA22CbJhub7IiNDb55KmesECmPxCZxFwV6bydMb5rXyb4EQyS02mWD8EyR55MD8qgiN0AmHXSMFX+nOIwdUoshvhdX50OPrf9yyItj7j4VSIBaqzN/Ydw16nwmuI4Q+PHCYKwWiA8pxA6gitMkEo4cKRXsKBZrKTAxUpkvx+Pm+GPmEWKhKu46kIqtMMJjv5X7uV5jVle06cqZlkwkWYIlSRnOkF8rIjlgQjsvOTHApSImSEZ/J5QALVSE+kebaKhOMfhqpZBgAWqmqEyTZWmWCwXxfcrWQTvbLEgzxcstG6gP5Xn4v/QrRSSW7AWywVSZYgH5VbhlIb7USDKgPrDLBAvSr8nMxQKcg31Z0ApDHVplgrGyskkTAW9zVPgFwW/nLrpEinUJlphXgr2tjTQCnY5UJFlC+r6YrZMdVxgUIpRZnghNxee6zoAXBHVdpQb4Ckmd2VQjk+9qcEq9y+a/qVjwTa5cJhtJbzep4ldfdin/NwioTLKB8Xz0xAejumlvxgalS8doRPt/X3kLie0m5W1MhG5jsMsECSci13g34cG2tQAG+6W2VZEPyvawRDHyVWa+i2VBqc9wyEUAnNap2xFWZld43uZ6r8ewywQLSSS3U+ewHr+t8BMum2zZSMeJG6upFI2vUDT6CDb3WjZQP/vX2m2WhGqQZ/0TsMsHIh9nr04LsMVKD2eWfiFUmWADtbK3V42uwptFxv291JjjdMfdGWT3OeB7zflYzMnKh1DITLPh835gAYdvZZmTkvj5rmQlGAkGdQeHcVt7WjZQ9EbFupFxN1eSiWbdq1Jjs34T8tG2k3ElgM5azbtWY22J1bpcJFoCbNNzKpae7W906o3OrM8GJcPle3rrN6+kH0qSUuL/rscwE881bc8fs9U1KiXnNwjYTbG5EDAsldxsq4T4IY5kJFmy+rxxWpMKc5rbiBpM+bTPBguXzWzUjZ3TNuMGEUttMMJutyrGt/Hrmn8xax5ycVducCU43QOf7Fo/JsFDtCoxOt/LQtgq5fN+KjDTjoZhqojsR20yw4PJ9u6JiVNLuZWk/t80EJ0MSxP1rhxWp0GMj8ZuljRuQBYL8ZzsZMvlbQaCQLJRsTzUxN7DNBLN/Y9naAN1qKVhBxm9tk2xco9AO5XToVXgVSepYJ9niHVOMhKIoZjas+OdS6kjEOhPM5XsFvUDGflXoJ1+z+D8YKUn0KZIbXUYr6hPy7NXyTHAiZHYrx9DLDVNltOrFOrIEss4EC2aSRxE3yDJa1emRkck6EyzoD1uo+hrysFhFR1AL/h9GSqZjFUNEJRclZ0YusM4E0/leybVTnyNTcmbUaxbWmWDBPOG37SdMRUb1iC/xmkXnmWDkPx6p8TRV1U9ZdYvuSBYQRV7HmeAt5H9IqdivfF2V6tfbbYigY29HJniJ/Jcsle+VJB/BQqkDI+nonYw0mItL4K/V9TMSGq/Ss1Aqt6UfSTcmOHgQ9/x/OhP5XllueILQiLLEJPrljkzw+B74X24q3ys3TAQadR9EvWbRkQkeX4jf7H+rkxtWmRDRzSpqWEGGsq5McLgQ5yxCIjKqeVqiTlczSkQo7coEh+diyiLU53vNiZee7i7f2qsJ9Qw7zgSHU+EsuWDqa5tTZfamvCr59Fdb9AdrXb8OESwd4ZwwoYZyEmVbQxQoGo3og7XmkcAyPokQLhgz1ed7zUvj+l5P93lx/ZRHVyY4XEQIpxP6In2+19mcfoE6t+mtpDMTPJlGCB2mbiNMSGNzWtpMcxSvT0ddmeBg7sQIr0gz1Y+56MY/tCcQui5BH0o7G+lVgvAPjVDLESm7BNLmNK2s1qw7M8GTowShc0OZqfYB626vT9+6oSYtudqVCQ5unBQhWbhpy36dj2hJJS3fon3NoisTHEXSFKFDZcQo32tEc+482tct0JCC8YG4Rjq+eB84OcKZXonei9tNpZzpyAX/5Zl6xaaGFPS+/tPcoqORhrMC4TFhpp6rEe3ddQu0/2FvfgsQ4XGBkFLicCW8cEqEDk9lDE/Gx1WEdNYfpCSBtETIlW7Dk7hgqyE8YurvwUlcztQQrluwycJMFeF62Wlho1WEdAE+MAn/KBA61+vjipNrR4VwfVxxcuWoETon6wExvHd0CJ3LdYAYnjh6hOsAMfzPoRAOH2JDg22Ezn/Dhji5bwJqIXRmQ04atSiqQ+hcj/lD06cp4/C6DUeB0JnOh2mp4XyqQKNC6DgXk+EVqcHkQolFjdA5Gpwaw/mRGooGoeMsxkPCGI4XOiBahM7xLBwKxjCcHWtx6BHGGIPw6ftjtEcCH40wkt83kycNMggnN79pCAzCKObM5pNw/BRRBuNwMp9p4osBwkimi5NlGIbjcfA0gAbBeBztZ3myUOW/VRAmKM8Xs/vLmyUyrGlXlsuby/uLxTmCLpb/ASS5JYzvLESjAAAAAElFTkSuQmCC",
+  },
+  {
+    name: "Adobe Illustrator",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/2101px-Adobe_Illustrator_CC_icon.svg.png",
+  },
+  {
+    name: "Adobe Photoshop",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/1200px-Adobe_Photoshop_CC_icon.svg.png",
+  },
+  {
+    name: "Adobe Premiere Pro",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/2101px-Adobe_Premiere_Pro_CC_icon.svg.png",
+  },
+  {
+    name: "Adobe After Effect",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Adobe_After_Effects_CC_icon.svg/2101px-Adobe_After_Effects_CC_icon.svg.png",
+  },
+  {
+    name: "Figma",
+    logo: "https://logowik.com/content/uploads/images/figma.jpg",
+  },
+  {
+    name: "Whimsical",
+    logo: "https://i.pinimg.com/736x/ea/2a/b2/ea2ab287b40acfe28348c71eb780d11c.jpg",
+  },
+  {
+    name: "Miro",
+    logo: "data:image/png;base64,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",
+  },
+  {
+    name: "Adobe Illustrator",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/2101px-Adobe_Illustrator_CC_icon.svg.png",
+  },
+  {
+    name: "Adobe Photoshop",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/1200px-Adobe_Photoshop_CC_icon.svg.png",
+  },
+  {
+    name: "Adobe Premiere Pro",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/2101px-Adobe_Premiere_Pro_CC_icon.svg.png",
+  },
+  {
+    name: "Adobe After Effect",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Adobe_After_Effects_CC_icon.svg/2101px-Adobe_After_Effects_CC_icon.svg.png",
+  },
+  {
+    name: "Figma",
+    logo: "https://logowik.com/content/uploads/images/figma.jpg",
+  },
+  {
+    name: "Whimsical",
+    logo: "https://i.pinimg.com/736x/ea/2a/b2/ea2ab287b40acfe28348c71eb780d11c.jpg",
+  },
+  {
+    name: "Miro",
+    logo: "data:image/png;base64,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",
+  },
+  {
+    name: "Adobe Illustrator",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/2101px-Adobe_Illustrator_CC_icon.svg.png",
+  },
+  {
+    name: "Adobe Photoshop",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/1200px-Adobe_Photoshop_CC_icon.svg.png",
+  },
+  {
+    name: "Adobe Premiere Pro",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/2101px-Adobe_Premiere_Pro_CC_icon.svg.png",
+  },
+  {
+    name: "Adobe After Effect",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Adobe_After_Effects_CC_icon.svg/2101px-Adobe_After_Effects_CC_icon.svg.png",
+  },
+  {
+    name: "Figma",
+    logo: "https://logowik.com/content/uploads/images/figma.jpg",
+  },
+  {
+    name: "Whimsical",
+    logo: "https://i.pinimg.com/736x/ea/2a/b2/ea2ab287b40acfe28348c71eb780d11c.jpg",
+  },
+  {
+    name: "Miro",
+    logo: "data:image/png;base64,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",
+  },
+  {
+    name: "Adobe Illustrator",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/2101px-Adobe_Illustrator_CC_icon.svg.png",
+  },
+  {
+    name: "Adobe Photoshop",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/1200px-Adobe_Photoshop_CC_icon.svg.png",
+  },
+  {
+    name: "Adobe Premiere Pro",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/2101px-Adobe_Premiere_Pro_CC_icon.svg.png",
+  },
+  {
+    name: "Adobe After Effect",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Adobe_After_Effects_CC_icon.svg/2101px-Adobe_After_Effects_CC_icon.svg.png",
+  },
+  {
+    name: "Figma",
+    logo: "https://logowik.com/content/uploads/images/figma.jpg",
+  },
+  {
+    name: "Whimsical",
+    logo: "https://i.pinimg.com/736x/ea/2a/b2/ea2ab287b40acfe28348c71eb780d11c.jpg",
+  },
+  {
+    name: "Miro",
+    logo: "data:image/png;base64,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",
+  },
+  {
+    name: "Adobe Illustrator",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/2101px-Adobe_Illustrator_CC_icon.svg.png",
+  },
+  {
+    name: "Adobe Photoshop",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/1200px-Adobe_Photoshop_CC_icon.svg.png",
+  },
+  {
+    name: "Adobe Premiere Pro",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/2101px-Adobe_Premiere_Pro_CC_icon.svg.png",
+  },
+  {
+    name: "Adobe After Effect",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Adobe_After_Effects_CC_icon.svg/2101px-Adobe_After_Effects_CC_icon.svg.png",
+  },
+  {
+    name: "Figma",
+    logo: "https://logowik.com/content/uploads/images/figma.jpg",
+  },
+  {
+    name: "Whimsical",
+    logo: "https://i.pinimg.com/736x/ea/2a/b2/ea2ab287b40acfe28348c71eb780d11c.jpg",
+  },
+  {
+    name: "Miro",
+    logo: "data:image/png;base64,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",
+  },
+  {
+    name: "Adobe Illustrator",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/2101px-Adobe_Illustrator_CC_icon.svg.png",
+  },
+  {
+    name: "Adobe Photoshop",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/1200px-Adobe_Photoshop_CC_icon.svg.png",
+  },
+  {
+    name: "Adobe Premiere Pro",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/2101px-Adobe_Premiere_Pro_CC_icon.svg.png",
+  },
+  {
+    name: "Adobe After Effect",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Adobe_After_Effects_CC_icon.svg/2101px-Adobe_After_Effects_CC_icon.svg.png",
+  },
+];
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 600,
+  bgcolor: "background.paper",
+  boxShadow: 24,
+  p: 4,
+  borderRadius: 8,
+};
+
 export default function About() {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <>
-      <section>
-        <div className="mx-auto max-w-screen-xl px-4 pt-8 sm:pt-12 sm:px-6 lg:pt-12 lg:px-8">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
+      <div
+        className="min-h-screen"
+        style={{
+          background:
+            "linear-gradient(0deg, rgba(9,101,192,1) 0%, rgba(58,59,146,1) 100%)",
+        }}
+      >
+        {/* new */}
+        {/* new */}
+        {/* new */}
+
+        <section className="flex items-center justify-center text-center py-20">
+          <div className="mx-auto max-w-screen-xl">
             <div>
-              <h2 className="text-3xl font-bold sm:text-3xl text-neutral-800">
-                Summary
-              </h2>
-
-              <p className="mt-4 text-neutral-600 leading-8">
-                I am a Software Engineer with a deep passion for innovation and
-                a commitment to excellence. Armed with a degree in Computer
-                Science and enriched by Hacktiv8's Full Stack JavaScript
-                bootcamp, I specialize in developing user-friendly software that
-                harmoniously combines technical expertise with design finesse.
-              </p>
-
-              <p className="mt-2 text-neutral-600 leading-8">
-                My portfolio showcases striking visuals and user-friendly
-                interfaces, driven by a unique fusion of coding and design
-                skills. My mission is to democratize technology, ensuring it's
-                not only functional but also a delightful experience for users
-                of all levels.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-3xl font-bold sm:text-3xl text-neutral-800">
-                Educational background
-              </h2>
-
-              <div className="flex mt-7">
-                <img
-                  src="https://media.licdn.com/dms/image/D560BAQEKFoWgJid8QQ/company-logo_100_100/0/1681278866452?e=1704326400&v=beta&t=NPQAvyVJAsge6uCvO8X8kk5DD8vYg_ce4nJik5V1Jfk"
-                  alt=""
-                  className="w-[52px] h-[52px] rounded-md mr-4 mt-1 object-cover"
-                />
-                <div>
-                  <h1 className="text-neutral-800 font-bold text-xl">
-                    Hacktiv8 Indonesia
-                  </h1>
-                  <p className="text-neutral-600 text-sm">
-                    Full Stack JavaScript Immersive Program{" "}
-                    <a
-                      href="https://drive.google.com/file/d/1u5NhylOaWjlB5Rih36s-QBvtkrnE3zkV/view?usp=sharing"
-                      className="text-blue-600"
-                      target="_blank"
-                    >
-                      (Transcript)
-                    </a>
-                  </p>
-                  <p className="text-neutral-600 text-sm">
-                    June 2023 - Sept 2023
-                  </p>
-                </div>
+              <div className="sif-l">
+                <h1 className="text-6xl font-bold text-white text-center transition duration-300 transform hover:scale-105 mx-80">
+                  Kresna Wijaya{" "}
+                  <span className="font-medium text-2xl">· he/him</span>
+                </h1>
               </div>
-
-              <div className="flex mt-6">
-                <img
-                  src="https://media.licdn.com/dms/image/C560BAQGnhsFwo9f3vg/company-logo_100_100/0/1537458629770?e=1704326400&v=beta&t=MbIjwWB-VC0lY4CpCaZlNFs3_PF_fhwssMtmZt6vJGM"
-                  alt=""
-                  className="w-[52px] h-[52px] rounded-md mr-4 mt-1 object-cover"
-                />
-                <div>
-                  <h1 className="text-neutral-800 font-bold text-xl">
-                    Udayana University
-                  </h1>
-                  <p className="text-neutral-600 text-sm">
-                    Bachelor's degree, Computer Science{" "}
-                    <a
-                      href="https://drive.google.com/file/d/1ajwIvq-KuMkBMJAmvfw5SWjrRjYNrDNs/view?usp=sharing"
-                      className="text-blue-600"
-                      target="_blank"
-                    >
-                      (Transcript)
-                    </a>
-                  </p>
-                  <p className="text-neutral-600 text-sm">2018 - 2022</p>
-                </div>
+              <div className="sif-r">
+                {" "}
+                <p className="text-white text-lg flex-1 mt-12 leading-8 transition duration-300 transform hover:scale-105 mx-40">
+                  👨‍💻 a passionate software engineer from Jakarta, Indonesia.
+                  Armed with a degree in Computer Science and bolstered by
+                  Hacktiv8's Full Stack JavaScript bootcamp, I've refined my
+                  skills in creating user-centric software that's both
+                  technically sound and aesthetically pleasing. Explore my
+                  portfolio to discover a seamless blend of code and creativity.
+                  My mission is to democratize technology and ensure it's not
+                  only robust but also delightful to use. Let's transform those
+                  tech visions into digital realities! 🌟.
+                </p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section>
-        <div className="mx-auto max-w-screen-xl px-4 pt-8 sm:pt-12 sm:px-6 lg:pt-16 lg:px-8">
-          <div>
-            <div>
-              <h2 className="text-3xl font-bold sm:text-3xl text-neutral-800">
-                Work Experience
-              </h2>
-              <div className="grid grid-cols-1 lg:grid-cols-2 mt-6 gap-6">
-                <div>
-                  <article className="mb-6 drop-shadow rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6">
-                    <div className="flex">
-                      <img
-                        src="https://media.licdn.com/dms/image/D560BAQH4mvGKR_wB-A/company-logo_100_100/0/1694683493177?e=1704326400&v=beta&t=4xXnG1QLO8QG2-T0Kt5QZsWThPqLCXbf0otttyKKkXQ"
-                        alt=""
-                        className="inline-block rounded w-[60px] h-[60px] mb-2"
-                      />
-                      <div className="py-auto flex-1 ml-4 mt-0.5">
-                        <h1 className="text-neutral-800 font-semibold text-md">
-                          Astra Credit Companies
-                        </h1>
-                        <p className="text-neutral-600 text-sm font-normal mt-0.5">
-                          Graphic Design Intern (Mar 2023 - Jun 2023)
-                        </p>
-                      </div>
-                    </div>
-                    <p className="text-neutral-600 text-sm font-normal mt-1 leading-6">
-                      As a Graphic Design Intern, I created visually captivating
-                      graphics and collaborated with cross-functional teams,
-                      resulting in a 15% boost in social media engagement,
-                      including obtaining Instagram's verified status.
-                    </p>
-                  </article>
-                  <article className="drop-shadow rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6">
-                    <div className="flex">
-                      <img
-                        src="https://media.licdn.com/dms/image/C560BAQFN5mZsxgIpwQ/company-logo_100_100/0/1519867146123?e=1704326400&v=beta&t=-LqclD0twiY7oF3wYMKRMYduLGpOTSf65ZD64rQyRVE"
-                        alt=""
-                        className="inline-block rounded w-[60px] h-[60px] mb-2"
-                      />
-                      <div className="py-auto flex-1 ml-4 mt-0.5">
-                        <h1 className="text-neutral-800 font-semibold text-md">
-                          Tiket.com
-                        </h1>
-                        <p className="text-neutral-600 text-sm font-normal mt-0.5">
-                          Creative Design Intern (Apr 2022 - Dec 2022)
-                        </p>
-                      </div>
-                    </div>
-                    <p className="text-neutral-600 text-sm font-normal mt-1 leading-6">
-                      In my role as a Creative Designer Intern, I collaborated
-                      extensively with the marketing team to produce over 200
-                      engaging graphic designs for marketing materials,
-                      effectively promoting our transport services and
-                      maintaining a consistent visual brand identity across
-                      platforms.
-                    </p>
-                  </article>
+        <section className="bg-white items-center justify-center text-center py-20">
+          <div className="mx-auto max-w-screen-xl sif-b">
+            <h1 className="text-4xl font-bold text-neutral-800 text-center transition duration-300 transform hover:scale-105 mx-80">
+              My Tech Toolkit 🛠️
+            </h1>
+            <p className="text-neutral-600 text-lg flex-1 mt-4 mb-2 leading-8 transition duration-300 transform hover:scale-105 mx-40">
+              Crafting digital experiences with a diverse skill set, where code
+              and creativity merge seamlessly.
+            </p>
+          </div>
+          <div className="slider">
+            <div className="slide-track">
+              {skillData.map((skill, index) => (
+                <div key={index} className="slide">
+                  <img
+                    src={skill.logo}
+                    alt={skill.name}
+                    className="skill-logo"
+                  />
+                  <p className="skill-name text-sm text-neutral-500">
+                    {skill.name}
+                  </p>
                 </div>
-                <div>
-                  <article className="mb-6 drop-shadow rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6">
-                    <div className="flex">
-                      <img
-                        src="https://media.licdn.com/dms/image/C560BAQHrJ7F7DdlrrA/company-logo_100_100/0/1601352505975?e=1704326400&v=beta&t=_Nno0OJujcDSW8T4bF_nFhfKYQY4qohEyierT9yWZbg"
-                        alt=""
-                        className="inline-block rounded w-[60px] h-[60px] mb-2"
-                      />
-                      <div className="py-auto flex-1 ml-4 mt-0.5">
-                        <h1 className="text-neutral-800 font-semibold text-md">
-                          Bank Neo Commerce
-                        </h1>
-                        <p className="text-neutral-600 text-sm font-normal mt-0.5">
-                          Graphic Design Intern (Jan 2023 - Mar 2023)
-                        </p>
-                      </div>
-                    </div>
-                    <p className="text-neutral-600 text-sm font-normal mt-1 leading-6">
-                      During my internship as a Graphic Designer, I designed and
-                      delivered various materials, including recruitment
-                      brochures and website graphics, while establishing and
-                      maintaining a comprehensive visual style guide for
-                      consistent employer branding.
-                    </p>
-                  </article>
-                  <article className="drop-shadow rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6">
-                    <div className="flex">
-                      <img
-                        src="https://media.licdn.com/dms/image/D4D0BAQE_9YafdNTeGw/company-logo_100_100/0/1665127143046?e=1704326400&v=beta&t=pv2WqmMXq-yHzS0Xsg35KU39_15gUxo8Vl-juA9wikA"
-                        alt=""
-                        className="inline-block rounded w-[60px] h-[60px] mb-2"
-                      />
-                      <div className="py-auto flex-1 ml-4 mt-0.5">
-                        <h1 className="text-neutral-800 font-semibold text-md">
-                          TaniHub
-                        </h1>
-                        <p className="text-neutral-600 text-sm font-normal mt-0.5">
-                          Graphic Design Intern (Aug 2021 - Feb 2022)
-                        </p>
-                      </div>
-                    </div>
-                    <p className="text-neutral-600 text-sm font-normal mt-1 leading-6">
-                      As a Graphic Design Intern, I tracked industry trends,
-                      contributed to increased infographic and visual material
-                      production, and collaborated with the Corporate
-                      Communication team to convey the company's message and
-                      values through captivating graphics and presentations.
-                    </p>
-                  </article>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="mb-8">
-        <div className="mx-auto max-w-screen-xl px-4 pt-8 sm:pt-12 sm:px-6 lg:pt-16 lg:px-8">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
-            <div>
-              <h2 className="text-3xl font-bold sm:text-3xl text-neutral-800">
-                Skills
-              </h2>
-
-              <div className="grid grid-cols-1 lg:grid-cols-4 mt-6 gap-8">
+          <div className="slider">
+            <div className="slide-track2">
+              {skillData2.map((skill, index) => (
+                <div key={index} className="slide">
+                  <img
+                    src={skill.logo}
+                    alt={skill.name}
+                    className="skill-logo"
+                  />
+                  <p className="skill-name text-sm text-neutral-500">
+                    {skill.name}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="slider">
+            <div className="slide-track3">
+              {skillData3.map((skill, index) => (
+                <div key={index} className="slide">
+                  <img
+                    src={skill.logo}
+                    alt={skill.name}
+                    className="skill-logo"
+                  />
+                  <p className="skill-name text-sm text-neutral-500">
+                    {skill.name}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <button>
+            <a
+              onClick={handleOpen}
+              className="mt-6 inline-block bg-[#0965c0] hover:bg-[#3a3b92] text-white font-semibold text-md py-2 px-12 rounded-full transition duration-300 transform hover:scale-105"
+            >
+              View all
+            </a>
+          </button>
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <div>
                 <div className="col-span-3">
                   <div className="mb-6">
                     <h1 className="text-neutral-800 font-bold text-md">
@@ -220,8 +773,8 @@ export default function About() {
                       Front End
                     </h1>
                     <p className="text-neutral-600 text-md">
-                      Vue JS, Pinia, React JS, Redux, React Native, HTML & CSS,
-                      Apollo Client, Tailwind
+                      HTML5, CSS, Vue JS, React JS, React Native, Tailwind,
+                      jQuery
                     </p>
                   </div>
                   <div className="mb-6">
@@ -229,89 +782,386 @@ export default function About() {
                       Back End
                     </h1>
                     <p className="text-neutral-600 text-md">
-                      Node JS, Express, Sequelize, PostgreSQL, GraphQL, Apollo
-                      Server, MongoDB, Redis, Rest API
+                      Node JS, Express JS, Sequelize
                     </p>
                   </div>
                   <div className="mb-6">
                     <h1 className="text-neutral-800 font-bold text-md">
+                      Databases
+                    </h1>
+                    <p className="text-neutral-600 text-md">
+                      PostgreSQL, MongoDB, Firestore
+                    </p>
+                  </div>
+                  <div className="mb-6">
+                    <h1 className="text-neutral-800 font-bold text-md">
+                      Others
+                    </h1>
+                    <p className="text-neutral-600 text-md">
+                      GraphQL, Jest, Pinia, Redux, JWT, Docker, AWS, Firebase,
+                      Vite, Postman, NPM, VSCode, Github, Ubuntu
+                    </p>
+                  </div>
+                  <div>
+                    <h1 className="text-neutral-800 font-bold text-md">
                       Design Tools
                     </h1>
                     <p className="text-neutral-600 text-md">
-                      Figma, Adobe Illustrator, Adobe Photoshop, Adobe Premiere
-                      Pro, Adobe After Effect
+                      Figma, Whimsical, Miro, Adobe Illustrator, Adobe
+                      Photoshop, Adobe Premiere Pro, Adobe After Effect
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Box>
+          </Modal>
+        </section>
+
+        <section className="flex items-center justify-center text-center py-20">
+          <div className="mx-auto max-w-screen-xl">
+            <div>
+              <div className="sif-l">
+                <h1 className="text-6xl font-bold text-white text-center transition duration-300 transform hover:scale-105 mx-80">
+                  Kresna Wijaya{" "}
+                  <span className="font-medium text-2xl">· he/him</span>
+                </h1>
+              </div>
+              <div className="sif-r">
+                {" "}
+                <p className="text-white text-lg flex-1 mt-12 leading-8 transition duration-300 transform hover:scale-105 mx-40">
+                  👨‍💻 a passionate software engineer from Jakarta, Indonesia.
+                  Armed with a degree in Computer Science and bolstered by
+                  Hacktiv8's Full Stack JavaScript bootcamp, I've refined my
+                  skills in creating user-centric software that's both
+                  technically sound and aesthetically pleasing. Explore my
+                  portfolio to discover a seamless blend of code and creativity.
+                  My mission is to democratize technology and ensure it's not
+                  only robust but also delightful to use. Let's transform those
+                  tech visions into digital realities! 🌟.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* batas disini */}
+        {/* batas disini */}
+        {/* batas disini */}
+
+        <section>
+          <div className="mx-auto max-w-screen-xl px-4 pt-8 sm:pt-12 sm:px-6 lg:pt-12 lg:px-8">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
+              <div>
+                <h2 className="text-3xl font-bold sm:text-3xl text-neutral-800">
+                  Summary
+                </h2>
+
+                <p className="mt-4 text-neutral-600 leading-8">
+                  I am a Software Engineer with a deep passion for innovation
+                  and a commitment to excellence. Armed with a degree in
+                  Computer Science and enriched by Hacktiv8's Full Stack
+                  JavaScript bootcamp, I specialize in developing user-friendly
+                  software that harmoniously combines technical expertise with
+                  design finesse.
+                </p>
+
+                <p className="mt-2 text-neutral-600 leading-8">
+                  My portfolio showcases striking visuals and user-friendly
+                  interfaces, driven by a unique fusion of coding and design
+                  skills. My mission is to democratize technology, ensuring it's
+                  not only functional but also a delightful experience for users
+                  of all levels.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-3xl font-bold sm:text-3xl text-neutral-800">
+                  Educational background
+                </h2>
+
+                <div className="flex mt-7">
+                  <img
+                    src="https://media.licdn.com/dms/image/D560BAQEKFoWgJid8QQ/company-logo_100_100/0/1681278866452?e=1704326400&v=beta&t=NPQAvyVJAsge6uCvO8X8kk5DD8vYg_ce4nJik5V1Jfk"
+                    alt=""
+                    className="w-[52px] h-[52px] rounded-md mr-4 mt-1 object-cover"
+                  />
+                  <div>
+                    <h1 className="text-neutral-800 font-bold text-xl">
+                      Hacktiv8 Indonesia
+                    </h1>
+                    <p className="text-neutral-600 text-sm">
+                      Full Stack JavaScript Immersive Program{" "}
+                      <a
+                        href="https://drive.google.com/file/d/1u5NhylOaWjlB5Rih36s-QBvtkrnE3zkV/view?usp=sharing"
+                        className="text-blue-600"
+                        target="_blank"
+                      >
+                        (Transcript)
+                      </a>
+                    </p>
+                    <p className="text-neutral-600 text-sm">
+                      June 2023 - Sept 2023
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex mt-6">
+                  <img
+                    src="https://media.licdn.com/dms/image/C560BAQGnhsFwo9f3vg/company-logo_100_100/0/1537458629770?e=1704326400&v=beta&t=MbIjwWB-VC0lY4CpCaZlNFs3_PF_fhwssMtmZt6vJGM"
+                    alt=""
+                    className="w-[52px] h-[52px] rounded-md mr-4 mt-1 object-cover"
+                  />
+                  <div>
+                    <h1 className="text-neutral-800 font-bold text-xl">
+                      Udayana University
+                    </h1>
+                    <p className="text-neutral-600 text-sm">
+                      Bachelor's degree, Computer Science (GPA 3.66/4.00)
+                      {/* <a
+                      href="https://drive.google.com/file/d/1ajwIvq-KuMkBMJAmvfw5SWjrRjYNrDNs/view?usp=sharing"
+                      className="text-blue-600"
+                      target="_blank"
+                    >
+                      (Transcript)
+                    </a> */}
+                    </p>
+                    <p className="text-neutral-600 text-sm">2018 - 2022</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div className="mx-auto max-w-screen-xl px-4 pt-8 sm:pt-12 sm:px-6 lg:pt-16 lg:px-8">
+            <div>
+              <div>
+                <h2 className="text-3xl font-bold sm:text-3xl text-neutral-800">
+                  Work Experience
+                </h2>
+                <div className="grid grid-cols-1 lg:grid-cols-2 mt-6 gap-6">
+                  <div>
+                    <article className="mb-6 drop-shadow rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6">
+                      <div className="flex">
+                        <img
+                          src="https://media.licdn.com/dms/image/D560BAQH4mvGKR_wB-A/company-logo_100_100/0/1694683493177?e=1704326400&v=beta&t=4xXnG1QLO8QG2-T0Kt5QZsWThPqLCXbf0otttyKKkXQ"
+                          alt=""
+                          className="inline-block rounded w-[60px] h-[60px] mb-2"
+                        />
+                        <div className="py-auto flex-1 ml-4 mt-0.5">
+                          <h1 className="text-neutral-800 font-semibold text-md">
+                            Astra Credit Companies
+                          </h1>
+                          <p className="text-neutral-600 text-sm font-normal mt-0.5">
+                            Graphic Design Intern (Mar 2023 - Jun 2023)
+                          </p>
+                        </div>
+                      </div>
+                      <p className="text-neutral-600 text-sm font-normal mt-1 leading-6">
+                        As a Graphic Design Intern, I created visually
+                        captivating graphics and collaborated with
+                        cross-functional teams, resulting in a 15% boost in
+                        social media engagement, including obtaining Instagram's
+                        verified status.
+                      </p>
+                    </article>
+                    <article className="drop-shadow rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6">
+                      <div className="flex">
+                        <img
+                          src="https://media.licdn.com/dms/image/C560BAQFN5mZsxgIpwQ/company-logo_100_100/0/1519867146123?e=1704326400&v=beta&t=-LqclD0twiY7oF3wYMKRMYduLGpOTSf65ZD64rQyRVE"
+                          alt=""
+                          className="inline-block rounded w-[60px] h-[60px] mb-2"
+                        />
+                        <div className="py-auto flex-1 ml-4 mt-0.5">
+                          <h1 className="text-neutral-800 font-semibold text-md">
+                            Tiket.com
+                          </h1>
+                          <p className="text-neutral-600 text-sm font-normal mt-0.5">
+                            Creative Design Intern (Apr 2022 - Dec 2022)
+                          </p>
+                        </div>
+                      </div>
+                      <p className="text-neutral-600 text-sm font-normal mt-1 leading-6">
+                        In my role as a Creative Designer Intern, I collaborated
+                        extensively with the marketing team to produce over 200
+                        engaging graphic designs for marketing materials,
+                        effectively promoting our transport services and
+                        maintaining a consistent visual brand identity across
+                        platforms.
+                      </p>
+                    </article>
+                  </div>
+                  <div>
+                    <article className="mb-6 drop-shadow rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6">
+                      <div className="flex">
+                        <img
+                          src="https://media.licdn.com/dms/image/C560BAQHrJ7F7DdlrrA/company-logo_100_100/0/1601352505975?e=1704326400&v=beta&t=_Nno0OJujcDSW8T4bF_nFhfKYQY4qohEyierT9yWZbg"
+                          alt=""
+                          className="inline-block rounded w-[60px] h-[60px] mb-2"
+                        />
+                        <div className="py-auto flex-1 ml-4 mt-0.5">
+                          <h1 className="text-neutral-800 font-semibold text-md">
+                            Bank Neo Commerce
+                          </h1>
+                          <p className="text-neutral-600 text-sm font-normal mt-0.5">
+                            Graphic Design Intern (Jan 2023 - Mar 2023)
+                          </p>
+                        </div>
+                      </div>
+                      <p className="text-neutral-600 text-sm font-normal mt-1 leading-6">
+                        During my internship as a Graphic Designer, I designed
+                        and delivered various materials, including recruitment
+                        brochures and website graphics, while establishing and
+                        maintaining a comprehensive visual style guide for
+                        consistent employer branding.
+                      </p>
+                    </article>
+                    <article className="drop-shadow rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6">
+                      <div className="flex">
+                        <img
+                          src="https://media.licdn.com/dms/image/D4D0BAQE_9YafdNTeGw/company-logo_100_100/0/1665127143046?e=1704326400&v=beta&t=pv2WqmMXq-yHzS0Xsg35KU39_15gUxo8Vl-juA9wikA"
+                          alt=""
+                          className="inline-block rounded w-[60px] h-[60px] mb-2"
+                        />
+                        <div className="py-auto flex-1 ml-4 mt-0.5">
+                          <h1 className="text-neutral-800 font-semibold text-md">
+                            TaniHub
+                          </h1>
+                          <p className="text-neutral-600 text-sm font-normal mt-0.5">
+                            Graphic Design Intern (Aug 2021 - Feb 2022)
+                          </p>
+                        </div>
+                      </div>
+                      <p className="text-neutral-600 text-sm font-normal mt-1 leading-6">
+                        As a Graphic Design Intern, I tracked industry trends,
+                        contributed to increased infographic and visual material
+                        production, and collaborated with the Corporate
+                        Communication team to convey the company's message and
+                        values through captivating graphics and presentations.
+                      </p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-8">
+          <div className="mx-auto max-w-screen-xl px-4 pt-8 sm:pt-12 sm:px-6 lg:pt-16 lg:px-8">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
+              <div>
+                <h2 className="text-3xl font-bold sm:text-3xl text-neutral-800">
+                  Skills
+                </h2>
+
+                <div className="grid grid-cols-1 lg:grid-cols-4 mt-6 gap-8">
+                  <div className="col-span-3">
+                    <div className="mb-6">
+                      <h1 className="text-neutral-800 font-bold text-md">
+                        Programming Language
+                      </h1>
+                      <p className="text-neutral-600 text-md">JavaScript</p>
+                    </div>
+                    <div className="mb-6">
+                      <h1 className="text-neutral-800 font-bold text-md">
+                        Front End
+                      </h1>
+                      <p className="text-neutral-600 text-md">
+                        Vue JS, Pinia, React JS, Redux, React Native, HTML &
+                        CSS, Apollo Client, Tailwind
+                      </p>
+                    </div>
+                    <div className="mb-6">
+                      <h1 className="text-neutral-800 font-bold text-md">
+                        Back End
+                      </h1>
+                      <p className="text-neutral-600 text-md">
+                        Node JS, Express, Sequelize, PostgreSQL, GraphQL, Apollo
+                        Server, MongoDB, Redis, Rest API
+                      </p>
+                    </div>
+                    <div className="mb-6">
+                      <h1 className="text-neutral-800 font-bold text-md">
+                        Design Tools
+                      </h1>
+                      <p className="text-neutral-600 text-md">
+                        Figma, Adobe Illustrator, Adobe Photoshop, Adobe
+                        Premiere Pro, Adobe After Effect
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold sm:text-3xl text-neutral-800">
+                  Certifications
+                </h2>
+
+                <div className="flex mt-7">
+                  <img
+                    src="https://media.licdn.com/dms/image/C560BAQEzEQ03yA8k5g/company-logo_100_100/0/1625980729352?e=1704326400&v=beta&t=3ZsbIyv2zrDFbyioegx9b9E0hhy5T4Ixko_MKZ2UgQ0"
+                    alt=""
+                    className="w-[52px] h-[52px] rounded-md mr-4 mt-1 object-cover"
+                  />
+                  <div>
+                    <h1 className="text-neutral-800 font-bold text-xl">
+                      BuildWithAngga
+                    </h1>
+                    <p className="text-neutral-600 text-sm">
+                      Complete UI Designer: Visual Design, Prototype, Usability
+                      Testing
+                    </p>
+                    <p className="text-neutral-600 text-sm mt-4">
+                      Certificate: {"  "}
+                      <a
+                        href="https://buildwithangga.com/"
+                        className="text-blue-600"
+                        target="_blank"
+                      >
+                        qj1hWVNcVP
+                      </a>
+                    </p>
+                    <p className="text-neutral-600 text-sm">
+                      Issued on October 2022
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex mt-7">
+                  <img
+                    src="https://media.licdn.com/dms/image/C510BAQFlVe4cQaiGAg/company-logo_100_100/0/1585123208944?e=1704326400&v=beta&t=kGYX6rDjsCNch7M5D8ZMOh4W1iy_v_3acJnRz1mv7zc"
+                    alt=""
+                    className="w-[52px] h-[52px] rounded-md mr-4 mt-1 object-cover"
+                  />
+                  <div>
+                    <h1 className="text-neutral-800 font-bold text-xl">
+                      Skilvul
+                    </h1>
+                    <p className="text-neutral-600 text-sm">
+                      UI/UX Design Mastery
+                    </p>
+                    <p className="text-neutral-600 text-sm mt-4">
+                      Certificate: {"  "}
+                      <a
+                        href="https://badgr.com/public/assertions/3CC3pcsvQ1OWCv2BxvrB0w?identity__email=wkresna511.kw@gmail.com"
+                        className="text-blue-600"
+                        target="_blank"
+                      >
+                        3CC3pcsvQ1OWCv2BxvrB0w
+                      </a>
+                    </p>
+                    <p className="text-neutral-600 text-sm">
+                      Issued on August 2022
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            <div>
-              <h2 className="text-3xl font-bold sm:text-3xl text-neutral-800">
-                Certifications
-              </h2>
-
-              <div className="flex mt-7">
-                <img
-                  src="https://media.licdn.com/dms/image/C560BAQEzEQ03yA8k5g/company-logo_100_100/0/1625980729352?e=1704326400&v=beta&t=3ZsbIyv2zrDFbyioegx9b9E0hhy5T4Ixko_MKZ2UgQ0"
-                  alt=""
-                  className="w-[52px] h-[52px] rounded-md mr-4 mt-1 object-cover"
-                />
-                <div>
-                  <h1 className="text-neutral-800 font-bold text-xl">
-                    BuildWithAngga
-                  </h1>
-                  <p className="text-neutral-600 text-sm">
-                    Complete UI Designer: Visual Design, Prototype, Usability
-                    Testing
-                  </p>
-                  <p className="text-neutral-600 text-sm mt-4">
-                    Certificate: {"  "}
-                    <a
-                      href="https://buildwithangga.com/"
-                      className="text-blue-600"
-                      target="_blank"
-                    >
-                      qj1hWVNcVP
-                    </a>
-                  </p>
-                  <p className="text-neutral-600 text-sm">
-                    Issued on October 2022
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex mt-7">
-                <img
-                  src="https://media.licdn.com/dms/image/C510BAQFlVe4cQaiGAg/company-logo_100_100/0/1585123208944?e=1704326400&v=beta&t=kGYX6rDjsCNch7M5D8ZMOh4W1iy_v_3acJnRz1mv7zc"
-                  alt=""
-                  className="w-[52px] h-[52px] rounded-md mr-4 mt-1 object-cover"
-                />
-                <div>
-                  <h1 className="text-neutral-800 font-bold text-xl">
-                    Skilvul
-                  </h1>
-                  <p className="text-neutral-600 text-sm">
-                    UI/UX Design Mastery
-                  </p>
-                  <p className="text-neutral-600 text-sm mt-4">
-                    Certificate: {"  "}
-                    <a
-                      href="https://badgr.com/public/assertions/3CC3pcsvQ1OWCv2BxvrB0w?identity__email=wkresna511.kw@gmail.com"
-                      className="text-blue-600"
-                      target="_blank"
-                    >
-                      3CC3pcsvQ1OWCv2BxvrB0w
-                    </a>
-                  </p>
-                  <p className="text-neutral-600 text-sm">
-                    Issued on August 2022
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </>
   );
 }
