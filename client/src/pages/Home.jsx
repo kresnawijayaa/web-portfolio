@@ -2,14 +2,19 @@ import kresnaImage from "../assets/profile-pict-github.png";
 import React from "react";
 import Typewriter from "typewriter-effect";
 import "../AnimatedElement.css";
+import { Link } from "react-router-dom";
 
 export default function Home() {
+  const scrollToTop = () => {
+    window.scrollTo(0, 0); // Scrolls the page to the top
+  };
+
   return (
     <div
       className="min-h-screen"
       style={{
         background:
-          "linear-gradient(0deg, rgba(9,101,192,1) 0%, rgba(58,59,146,1) 100%)",
+          "linear-gradient(0deg, rgba(1,126,255,1) 0%, rgba(0,100,210,1) 100%)", // #017EFF (0) - #0064d2 (100)
       }}
     >
       <section className="flex items-center justify-center text-center py-20">
@@ -21,7 +26,7 @@ export default function Home() {
                   <img
                     alt="Party"
                     src={kresnaImage}
-                    className="mx-auto my-auto h-[280px] object-cover rounded-full transition duration-300 transform hover:scale-105 hover:-rotate-12"
+                    className="mx-auto my-auto h-[280px] object-cover rounded-full transition duration-300 transform hover:scale-105 hover:-rotate-12 shadow transition hover:shadow-lg"
                   />
                 </div>
               </div>
@@ -53,21 +58,33 @@ export default function Home() {
             </div>
 
             <div className="sif-b">
-              <div className="mt-12 px-4 py-8 mt-20 border border-1 rounded-full transition duration-300 transform hover:scale-105">
-                <p className="text-white text-md flex-1 mx-20 mt-2 transition duration-300 transform hover:scale-105">
+              <div className="mt-12 px-4 py-8 mt-20 border border-2 rounded-full transition duration-300 transform hover:scale-105">
+                <p className="text-white text-lg flex-1 mx-16 mt-2 transition duration-300 transform hover:scale-105">
                   🚀 Code explorer with an artistic touch 🎨 | Ex-designer
                   turned coding enthusiast 💻 | Cat and dog lover 🐱🐶, aspiring
                   to adopt a panther 🐆 | Novice Mobile Legends gamer 🎮
                 </p>
 
-                <a
-                  className="mt-6 inline-block bg-white hover:bg-neutral-200 text-[#0965c0] font-semibold text-md py-2 px-8 rounded-full transition duration-300 transform hover:scale-105"
-                  href="https://drive.google.com/file/d/1-dlmyPXQpQt5Kk7qQUQOd69hbGrV6x-_/view?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Dive into my CV
-                </a>
+                <div className="flex gap-8 justify-center mt-10 mb-2">
+                  <a
+                    href="https://drive.google.com/file/d/1-dlmyPXQpQt5Kk7qQUQOd69hbGrV6x-_/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white text-lg my-auto transition duration-300 transform hover:scale-110 hover:border-b border-white"
+                  >
+                    <button>Dive into my CV ↗</button>
+                  </a>
+                  <p className="my-auto text-white text-xl transition duration-300 transform hover:scale-125">
+                    or
+                  </p>
+                  <Link
+                    to="/about"
+                    onClick={scrollToTop}
+                    className="text-white text-lg my-auto transition duration-300 transform hover:scale-110 hover:border-b border-white"
+                  >
+                    <button>View about me ↗</button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

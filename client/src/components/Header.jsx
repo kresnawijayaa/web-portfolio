@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <header className="bg-neutral-900" style={{ backgroundColor: "#3e3b92" }}>
+    <header className="bg-neutral-900" style={{ backgroundColor: "#0064d2" }}>
       <div className="mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8 justify-between">
         <Link to="/" className="block">
           <p className="text-2xl text-neutral-100 hover:text-neutral-100/75 font-bold">

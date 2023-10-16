@@ -839,7 +839,7 @@ export default function About() {
         className="min-h-screen"
         style={{
           background:
-            "linear-gradient(0deg, rgba(9,101,192,1) 0%, rgba(58,59,146,1) 100%)",
+            "linear-gradient(0deg, rgba(1,126,255,1) 0%, rgba(0,100,210,1) 100%)", // #017EFF (0) - #0064d2 (100)
         }}
       >
         {/* new */}
@@ -1177,43 +1177,53 @@ export default function About() {
                   Keep in touch! ✨
                 </h1>
               </div>
-              <div className="sif-r flex text-center justify-center gap-12">
+              <div className="sif-r flex text-center justify-center gap-12 mt-4 mb-2">
                 <a
                   href="https://www.linkedin.com/in/kresnawijaya/"
                   target="_blank"
-                  className="text-white text-lg mt-12 leading-8 transition duration-300 transform hover:scale-110"
+                  className="text-white text-lg mt-12 leading-8 transition duration-300 transform hover:scale-110 hover:border-b border-white"
                 >
                   <button>LinkedIn ↗</button>
                 </a>
                 <a
                   href="https://github.com/kresnawijayaa"
                   target="_blank"
-                  className="text-white text-lg mt-12 leading-8 transition duration-300 transform hover:scale-110"
+                  className="text-white text-lg mt-12 leading-8 transition duration-300 transform hover:scale-110 hover:border-b border-white"
                 >
                   <button>Github ↗</button>
                 </a>
                 <a
                   href="mailto:kresnawijaya511@gmail.com"
                   target="_blank"
-                  className="text-white text-lg mt-12 leading-8 transition duration-300 transform hover:scale-110"
+                  className="text-white text-lg mt-12 leading-8 transition duration-300 transform hover:scale-110 hover:border-b border-white"
                 >
-                  <button>kresnawijaya511@gmail.com ↗</button>
+                  <button>Googe Mail ↗</button>
                 </a>
                 <a
                   href="https://wa.me/6281314250902"
                   target="_blank"
-                  className="text-white text-lg mt-12 leading-8 transition duration-300 transform hover:scale-110"
+                  className="text-white text-lg mt-12 leading-8 transition duration-300 transform hover:scale-110 hover:border-b border-white"
                 >
-                  <button>(WhatsApp) +62 813-1425-0902 ↗</button>
+                  <button>WhatsApp ↗</button>
                 </a>
                 <a
                   href="https://www.instagram.com/kresnawijaya__/"
                   target="_blank"
-                  className="text-white text-lg mt-12 leading-8 transition duration-300 transform hover:scale-110"
+                  className="text-white text-lg mt-12 leading-8 transition duration-300 transform hover:scale-110 hover:border-b border-white"
                 >
-                  <button>✌️Instagram ↗</button>
+                  <button>✌️😁 Instagram ↗</button>
                 </a>
               </div>
+
+              {/* <div // LinkedIn Badges
+                class="badge-base LI-profile-badge"
+                data-locale="en_US"
+                data-size="medium"
+                data-theme="light"
+                data-type="VERTICAL"
+                data-vanity="kresnawijaya"
+                data-version="v1"
+              ></div> */}
             </div>
           </div>
         </section>

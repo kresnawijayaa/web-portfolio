@@ -3,7 +3,7 @@ export default function Footer() {
     <>
       <footer
         style={{
-          background: "#0965c0",
+          background: "#017EFF",
           boxShadow: "0 -2px 2px rgba(255, 255, 255, 0.2)",
         }}
       >
