@@ -7,6 +7,159 @@ import Modal from "@mui/material/Modal";
 import "../SkillsSlideshow.css";
 import "../AnimatedElement.css";
 
+import {
+  dicoding1AwsImage,
+  dicoding2DasarJavascriptImage,
+  dicoding3DasarWebImage,
+  dicoding4BackendImage,
+  dicoding5FrontendImage,
+  forage1JpmorganImage,
+  forage2WalmartImage,
+  forage3SkyscannerImage,
+  hr1JavascriptImage,
+  hr2NodejsImage,
+  hr3ReactImage,
+  hr4SqlImage,
+  hr5CssImage,
+} from "../certificateImages";
+
+const experienceData = [
+  {
+    id: 1,
+    companyName: "Astra Credit Companies",
+    role: "Graphic Design Intern",
+    date: "Mar 2023 - Jun 2023",
+    description:
+      "As a Graphic Design Intern, I created visually captivating graphics and collaborated with cross-functional teams, resulting in a 15% boost in social media engagement, including obtaining Instagram's verified status.",
+    logoUrl:
+      "https://media.licdn.com/dms/image/D560BAQH4mvGKR_wB-A/company-logo_100_100/0/1694683493177?e=1704326400&v=beta&t=4xXnG1QLO8QG2-T0Kt5QZsWThPqLCXbf0otttyKKkXQ",
+  },
+  {
+    id: 2,
+    companyName: "Bank Neo Commerce",
+    role: "Graphic Design Intern",
+    date: "Jan 2023 - Mar 2023",
+    description:
+      "During my internship as a Graphic Designer, I designed and delivered various materials, including recruitment brochures and website graphics, while establishing and maintaining a comprehensive visual style guide for consistent employer branding.",
+    logoUrl:
+      "https://media.licdn.com/dms/image/C560BAQHrJ7F7DdlrrA/company-logo_100_100/0/1601352505975?e=1704326400&v=beta&t=_Nno0OJujcDSW8T4bF_nFhfKYQY4qohEyierT9yWZbg",
+  },
+  {
+    id: 3,
+    companyName: "Tiket.com",
+    role: "Creative Design Intern",
+    date: "Apr 2022 - Dec 2022",
+    description:
+      "In my role as a Creative Designer Intern, I collaborated extensively with the marketing team to produce over 200 engaging graphic designs for marketing materials, effectively promoting our transport services and maintaining a consistent visual brand identity across platforms.",
+    logoUrl:
+      "https://media.licdn.com/dms/image/C560BAQFN5mZsxgIpwQ/company-logo_100_100/0/1519867146123?e=1704326400&v=beta&t=-LqclD0twiY7oF3wYMKRMYduLGpOTSf65ZD64rQyRVE",
+  },
+  {
+    id: 4,
+    companyName: "TaniHub",
+    role: "Graphic Design Intern",
+    date: "Aug 2021 - Feb 2022",
+    description:
+      "As a Graphic Design Intern, I tracked industry trends, contributed to increased infographic and visual material production, and collaborated with the Corporate Communication team to convey the company's message and values through captivating graphics and presentations.",
+    logoUrl:
+      "https://media.licdn.com/dms/image/D4D0BAQE_9YafdNTeGw/company-logo_100_100/0/1665127143046?e=1704326400&v=beta&t=pv2WqmMXq-yHzS0Xsg35KU39_15gUxo8Vl-juA9wikA",
+  },
+];
+
+const certificatesData = [
+  {
+    name: "HackerRank JavaScript (Basic)",
+    issuer: "HackerRank",
+    issuedDate: "October 2023",
+    certificateNumber: "A9A9B5529E37",
+    link: "https://www.hackerrank.com/certificates/a9a9b5529e37",
+  },
+  {
+    name: "HackerRank SQL (Basic)",
+    issuer: "HackerRank",
+    issuedDate: "October 2023",
+    certificateNumber: "2BC6BA5986EA",
+    link: "https://www.hackerrank.com/certificates/2bc6ba5986ea",
+  },
+  {
+    name: "HackerRank Node (Basic)",
+    issuer: "HackerRank",
+    issuedDate: "October 2023",
+    certificateNumber: "1C5D87D23CA5",
+    link: "https://www.hackerrank.com/certificates/1c5d87d23ca5",
+  },
+  {
+    name: "HackerRank React (Basic)",
+    issuer: "HackerRank",
+    issuedDate: "October 2023",
+    certificateNumber: "602332E6ACDE",
+    link: "https://www.hackerrank.com/certificates/602332e6acde",
+  },
+  {
+    name: "HackerRank CSS",
+    issuer: "HackerRank",
+    issuedDate: "October 2023",
+    certificateNumber: "F7735C1C2E33",
+    link: "https://www.hackerrank.com/certificates/f7735c1c2e33",
+  },
+  {
+    name: "Dasar Pemrograman JavaScript",
+    issuer: "Dicoding Indonesia",
+    issuedDate: "October 2023",
+    certificateNumber: "KEXLLQVNMXG2",
+    link: "https://www.dicoding.com/certificates/KEXLLQVNMXG2",
+  },
+  {
+    name: "Dasar Pemrograman Web",
+    issuer: "Dicoding Indonesia",
+    issuedDate: "October 2023",
+    certificateNumber: "N9ZO5N1GYPG5",
+    link: "https://www.dicoding.com/certificates/N9ZO5N1GYPG5",
+  },
+  {
+    name: "Membuat Aplikasi Back-End",
+    issuer: "Dicoding Indonesia",
+    issuedDate: "October 2023",
+    certificateNumber: "6RPN47JO4X2M",
+    link: "https://www.dicoding.com/certificates/6RPN47JO4X2M",
+  },
+  {
+    name: "Membuat Front-End Web",
+    issuer: "Dicoding Indonesia",
+    issuedDate: "October 2023",
+    certificateNumber: "EYX4YQN3RZDL",
+    link: "https://www.dicoding.com/certificates/EYX4YQN3RZDL",
+  },
+  {
+    name: "Cloud Practitioner Essentials (Dasar AWS Cloud)",
+    issuer: "Dicoding Indonesia",
+    issuedDate: "October 2023",
+    certificateNumber: "GRX52WMRVX0M",
+    link: "https://www.dicoding.com/certificates/GRX52WMRVX0M",
+  },
+  {
+    name: "Software Engineering Virtual Experience Program",
+    issuer: "JPMorgan Chase & Co.",
+    issuedDate: "October 2023",
+    certificateNumber: "zYfjp6nAX3RpyZKhr",
+    link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/J.P.%20Morgan/R5iK7HMxJGBgaSbvk_J.P.%20Morgan_zYfjp6nAX3RpyZKhr_1697175738259_completion_certificate.pdf",
+  },
+  {
+    name: "Advanced Software Engineering Virtual Experience Program",
+    issuer: "Walmart Global Tech",
+    issuedDate: "October 2023",
+    certificateNumber: "zYfjp6nAX3RpyZKhr",
+    link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Walmart%20USA/oX6f9BbCL9kJDJzfg_Walmart%20USA_zYfjp6nAX3RpyZKhr_1697125287850_completion_certificate.pdf",
+  },
+  {
+    name: "Front-End Software Engineering Virtual Experience Program",
+    issuer: "Skyscanner",
+    issuedDate: "October 2023",
+    certificateNumber: "zYfjp6nAX3RpyZKhr",
+    link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Skyscanner/km4rw7dihDr3etqom_Skyscanner_zYfjp6nAX3RpyZKhr_1697129593891_completion_certificate.pdf",
+  },
+];
+
 const skillData = [
   {
     name: "HTML5",
@@ -635,12 +788,45 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 600,
+  width: 540,
   bgcolor: "background.paper",
   boxShadow: 24,
   p: 4,
-  borderRadius: 8,
+  borderRadius: 4,
 };
+
+function getCertificateImage(certificateName) {
+  switch (certificateName) {
+    case "HackerRank JavaScript (Basic)":
+      return hr1JavascriptImage;
+    case "HackerRank SQL (Basic)":
+      return hr4SqlImage;
+    case "HackerRank Node (Basic)":
+      return hr2NodejsImage;
+    case "HackerRank React (Basic)":
+      return hr3ReactImage;
+    case "HackerRank CSS":
+      return hr5CssImage;
+    case "Dasar Pemrograman JavaScript":
+      return dicoding2DasarJavascriptImage;
+    case "Dasar Pemrograman Web":
+      return dicoding3DasarWebImage;
+    case "Membuat Aplikasi Back-End":
+      return dicoding4BackendImage;
+    case "Membuat Front-End Web":
+      return dicoding5FrontendImage;
+    case "Cloud Practitioner Essentials (Dasar AWS Cloud)":
+      return dicoding1AwsImage;
+    case "Software Engineering Virtual Experience Program":
+      return forage1JpmorganImage;
+    case "Advanced Software Engineering Virtual Experience Program":
+      return forage2WalmartImage;
+    case "Front-End Software Engineering Virtual Experience Program":
+      return forage3SkyscannerImage;
+    default:
+      return ""; // Provide a default image or handle missing images
+  }
+}
 
 export default function About() {
   const [open, setOpen] = React.useState(false);
@@ -696,79 +882,77 @@ export default function About() {
               Crafting digital experiences with a diverse skill set, where code
               and creativity merge seamlessly.
             </p>
-          </div>
-          <div className="slider">
-            <div className="slide-track">
-              {skillData.map((skill, index) => (
-                <div key={index} className="slide">
-                  <img
-                    src={skill.logo}
-                    alt={skill.name}
-                    className="skill-logo"
-                  />
-                  <p className="skill-name text-sm text-neutral-500">
-                    {skill.name}
-                  </p>
-                </div>
-              ))}
+            <div className="slider">
+              <div className="slide-track">
+                {skillData.map((skill, index) => (
+                  <div key={index} className="slide">
+                    <img
+                      src={skill.logo}
+                      alt={skill.name}
+                      className="skill-logo"
+                    />
+                    <p className="skill-name text-sm text-neutral-500">
+                      {skill.name}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="slider">
-            <div className="slide-track2">
-              {skillData2.map((skill, index) => (
-                <div key={index} className="slide">
-                  <img
-                    src={skill.logo}
-                    alt={skill.name}
-                    className="skill-logo"
-                  />
-                  <p className="skill-name text-sm text-neutral-500">
-                    {skill.name}
-                  </p>
-                </div>
-              ))}
+            <div className="slider">
+              <div className="slide-track2">
+                {skillData2.map((skill, index) => (
+                  <div key={index} className="slide">
+                    <img
+                      src={skill.logo}
+                      alt={skill.name}
+                      className="skill-logo"
+                    />
+                    <p className="skill-name text-sm text-neutral-500">
+                      {skill.name}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="slider">
-            <div className="slide-track3">
-              {skillData3.map((skill, index) => (
-                <div key={index} className="slide">
-                  <img
-                    src={skill.logo}
-                    alt={skill.name}
-                    className="skill-logo"
-                  />
-                  <p className="skill-name text-sm text-neutral-500">
-                    {skill.name}
-                  </p>
-                </div>
-              ))}
+            <div className="slider">
+              <div className="slide-track3">
+                {skillData3.map((skill, index) => (
+                  <div key={index} className="slide">
+                    <img
+                      src={skill.logo}
+                      alt={skill.name}
+                      className="skill-logo"
+                    />
+                    <p className="skill-name text-sm text-neutral-500">
+                      {skill.name}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-          <button>
-            <a
-              onClick={handleOpen}
-              className="mt-6 inline-block bg-[#0965c0] hover:bg-[#3a3b92] text-white font-semibold text-md py-2 px-12 rounded-full transition duration-300 transform hover:scale-105"
+            <button>
+              <a
+                onClick={handleOpen}
+                className="mt-6 inline-block bg-[#0965c0] hover:bg-[#3a3b92] text-white font-semibold text-md py-2 px-12 rounded-full transition duration-300 transform hover:scale-105"
+              >
+                View all
+              </a>
+            </button>
+            <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
             >
-              View all
-            </a>
-          </button>
-          <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-          >
-            <Box sx={style}>
-              <div>
-                <div className="col-span-3">
-                  <div className="mb-6">
+              <Box sx={style}>
+                <div>
+                  <div className="mb-4">
                     <h1 className="text-neutral-800 font-bold text-md">
                       Programming Language
                     </h1>
                     <p className="text-neutral-600 text-md">JavaScript</p>
                   </div>
-                  <div className="mb-6">
+                  <div className="mb-4">
                     <h1 className="text-neutral-800 font-bold text-md">
                       Front End
                     </h1>
@@ -777,7 +961,7 @@ export default function About() {
                       jQuery
                     </p>
                   </div>
-                  <div className="mb-6">
+                  <div className="mb-4">
                     <h1 className="text-neutral-800 font-bold text-md">
                       Back End
                     </h1>
@@ -785,7 +969,7 @@ export default function About() {
                       Node JS, Express JS, Sequelize
                     </p>
                   </div>
-                  <div className="mb-6">
+                  <div className="mb-4">
                     <h1 className="text-neutral-800 font-bold text-md">
                       Databases
                     </h1>
@@ -793,7 +977,7 @@ export default function About() {
                       PostgreSQL, MongoDB, Firestore
                     </p>
                   </div>
-                  <div className="mb-6">
+                  <div className="mb-4">
                     <h1 className="text-neutral-800 font-bold text-md">
                       Others
                     </h1>
@@ -812,351 +996,223 @@ export default function About() {
                     </p>
                   </div>
                 </div>
-              </div>
-            </Box>
-          </Modal>
-        </section>
-
-        <section className="flex items-center justify-center text-center py-20">
-          <div className="mx-auto max-w-screen-xl">
-            <div>
-              <div className="sif-l">
-                <h1 className="text-6xl font-bold text-white text-center transition duration-300 transform hover:scale-105 mx-80">
-                  Kresna Wijaya{" "}
-                  <span className="font-medium text-2xl">· he/him</span>
-                </h1>
-              </div>
-              <div className="sif-r">
-                {" "}
-                <p className="text-white text-lg flex-1 mt-12 leading-8 transition duration-300 transform hover:scale-105 mx-40">
-                  👨‍💻 a passionate software engineer from Jakarta, Indonesia.
-                  Armed with a degree in Computer Science and bolstered by
-                  Hacktiv8's Full Stack JavaScript bootcamp, I've refined my
-                  skills in creating user-centric software that's both
-                  technically sound and aesthetically pleasing. Explore my
-                  portfolio to discover a seamless blend of code and creativity.
-                  My mission is to democratize technology and ensure it's not
-                  only robust but also delightful to use. Let's transform those
-                  tech visions into digital realities! 🌟.
-                </p>
-              </div>
-            </div>
+                <div className="flex justify-end mt-6">
+                  <button>
+                    <a
+                      onClick={handleClose}
+                      className="inline-block bg-[#0965c0] hover:bg-[#3a3b92] text-white font-semibold text-md py-2 px-8 rounded-full transition duration-300 transform hover:scale-105"
+                    >
+                      Close
+                    </a>
+                  </button>
+                </div>
+              </Box>
+            </Modal>
           </div>
         </section>
 
-        {/* batas disini */}
-        {/* batas disini */}
-        {/* batas disini */}
-
-        <section>
-          <div className="mx-auto max-w-screen-xl px-4 pt-8 sm:pt-12 sm:px-6 lg:pt-12 lg:px-8">
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
+        <section className="py-20">
+          <div className="mx-auto max-w-screen-xl sif-b">
+            <div className="grid grid-cols-2 px-24">
               <div>
-                <h2 className="text-3xl font-bold sm:text-3xl text-neutral-800">
-                  Summary
-                </h2>
+                <div className="sif-l">
+                  <h1 className=" text-4xl font-bold text-white transition duration-300 transform hover:scale-105">
+                    Education &
+                  </h1>
+                  <h1 className=" text-4xl font-bold text-white transition duration-300 transform hover:scale-105">
+                    Experience 🎓💻
+                  </h1>
 
-                <p className="mt-4 text-neutral-600 leading-8">
-                  I am a Software Engineer with a deep passion for innovation
-                  and a commitment to excellence. Armed with a degree in
-                  Computer Science and enriched by Hacktiv8's Full Stack
-                  JavaScript bootcamp, I specialize in developing user-friendly
-                  software that harmoniously combines technical expertise with
-                  design finesse.
-                </p>
-
-                <p className="mt-2 text-neutral-600 leading-8">
-                  My portfolio showcases striking visuals and user-friendly
-                  interfaces, driven by a unique fusion of coding and design
-                  skills. My mission is to democratize technology, ensuring it's
-                  not only functional but also a delightful experience for users
-                  of all levels.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="text-3xl font-bold sm:text-3xl text-neutral-800">
-                  Educational background
-                </h2>
-
-                <div className="flex mt-7">
-                  <img
-                    src="https://media.licdn.com/dms/image/D560BAQEKFoWgJid8QQ/company-logo_100_100/0/1681278866452?e=1704326400&v=beta&t=NPQAvyVJAsge6uCvO8X8kk5DD8vYg_ce4nJik5V1Jfk"
-                    alt=""
-                    className="w-[52px] h-[52px] rounded-md mr-4 mt-1 object-cover"
-                  />
-                  <div>
-                    <h1 className="text-neutral-800 font-bold text-xl">
-                      Hacktiv8 Indonesia
-                    </h1>
-                    <p className="text-neutral-600 text-sm">
-                      Full Stack JavaScript Immersive Program{" "}
-                      <a
-                        href="https://drive.google.com/file/d/1u5NhylOaWjlB5Rih36s-QBvtkrnE3zkV/view?usp=sharing"
-                        className="text-blue-600"
-                        target="_blank"
-                      >
-                        (Transcript)
-                      </a>
-                    </p>
-                    <p className="text-neutral-600 text-sm">
-                      June 2023 - Sept 2023
-                    </p>
+                  <div className="flex mt-16 transition duration-300 transform hover:scale-105">
+                    <img
+                      src="https://media.licdn.com/dms/image/D560BAQEKFoWgJid8QQ/company-logo_100_100/0/1681278866452?e=1704326400&v=beta&t=NPQAvyVJAsge6uCvO8X8kk5DD8vYg_ce4nJik5V1Jfk"
+                      alt=""
+                      className="w-[52px] h-[52px] rounded-md mr-4 mt-1 object-cover"
+                    />
+                    <div>
+                      <h1 className="text-white font-bold text-xl">
+                        Hacktiv8 Indonesia
+                      </h1>
+                      <p className="text-white text-sm">
+                        Full Stack JavaScript Immersive Program{" "}
+                        <a
+                          href="https://drive.google.com/file/d/1u5NhylOaWjlB5Rih36s-QBvtkrnE3zkV/view?usp=sharing"
+                          className="text-white underline italic"
+                          target="_blank"
+                        >
+                          (Transcript)
+                        </a>
+                      </p>
+                      <p className="text-white text-sm">
+                        June 2023 - Sept 2023
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="flex mt-6">
-                  <img
-                    src="https://media.licdn.com/dms/image/C560BAQGnhsFwo9f3vg/company-logo_100_100/0/1537458629770?e=1704326400&v=beta&t=MbIjwWB-VC0lY4CpCaZlNFs3_PF_fhwssMtmZt6vJGM"
-                    alt=""
-                    className="w-[52px] h-[52px] rounded-md mr-4 mt-1 object-cover"
-                  />
-                  <div>
-                    <h1 className="text-neutral-800 font-bold text-xl">
-                      Udayana University
-                    </h1>
-                    <p className="text-neutral-600 text-sm">
-                      Bachelor's degree, Computer Science (GPA 3.66/4.00)
-                      {/* <a
+                  <div className="flex mt-8 transition duration-300 transform hover:scale-105">
+                    <img
+                      src="https://media.licdn.com/dms/image/C560BAQGnhsFwo9f3vg/company-logo_100_100/0/1537458629770?e=1704326400&v=beta&t=MbIjwWB-VC0lY4CpCaZlNFs3_PF_fhwssMtmZt6vJGM"
+                      alt=""
+                      className="w-[52px] h-[52px] rounded-md mr-4 mt-1 object-cover"
+                    />
+                    <div>
+                      <h1 className="text-white font-bold text-xl">
+                        Udayana University
+                      </h1>
+                      <p className="text-white text-sm">
+                        Bachelor's degree, Computer Science (GPA 3.66/4.00)
+                        {/* <a
                       href="https://drive.google.com/file/d/1ajwIvq-KuMkBMJAmvfw5SWjrRjYNrDNs/view?usp=sharing"
                       className="text-blue-600"
                       target="_blank"
                     >
                       (Transcript)
                     </a> */}
-                    </p>
-                    <p className="text-neutral-600 text-sm">2018 - 2022</p>
+                      </p>
+                      <p className="text-white text-sm">2018 - 2022</p>
+                    </div>
                   </div>
+                </div>
+              </div>
+              <div>
+                <div className="space-y-6">
+                  {experienceData.map((item) => (
+                    <details
+                      key={item.id}
+                      className="transition duration-300 transform hover:scale-105 overflow-hidden rounded border border-gray-300 [&_summary::-webkit-details-marker]:hidden"
+                    >
+                      <summary className="flex cursor-pointer items-center justify-between gap-2 bg-white p-4 text-gray-900 transition">
+                        <div className="flex">
+                          <img
+                            src={item.logoUrl}
+                            alt=""
+                            className="inline-block rounded w-[50px] h-[50px] mb-2"
+                          />
+                          <div className="flex-1 ml-4">
+                            <h1 className="text-neutral-800 font-semibold text-md">
+                              {item.companyName}
+                            </h1>
+                            <p className="text-neutral-600 text-sm font-normal">
+                              {item.role} ({item.date})
+                            </p>
+                          </div>
+                        </div>
+                        <span className="transition group-open:-rotate-180">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth="1.5"
+                            stroke="currentColor"
+                            className="h-4 w-4"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                            />
+                          </svg>
+                        </span>
+                      </summary>
+                      <div className="border-t border-gray-200 bg-white p-4">
+                        <p className="text-neutral-600 text-sm font-normal mt-1 leading-6">
+                          {item.description}
+                        </p>
+                      </div>
+                    </details>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section>
-          <div className="mx-auto max-w-screen-xl px-4 pt-8 sm:pt-12 sm:px-6 lg:pt-16 lg:px-8">
+        <section className="bg-white flex items-center justify-center text-center py-20">
+          <div className="mx-auto max-w-screen-xl">
             <div>
-              <div>
-                <h2 className="text-3xl font-bold sm:text-3xl text-neutral-800">
-                  Work Experience
-                </h2>
-                <div className="grid grid-cols-1 lg:grid-cols-2 mt-6 gap-6">
-                  <div>
-                    <article className="mb-6 drop-shadow rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6">
-                      <div className="flex">
+              <div className="sif-l">
+                <h1 className=" text-4xl font-bold text-neutral-800 text-center transition duration-300 transform hover:scale-105 mx-80">
+                  Certifications 🏆
+                </h1>
+                <p className="text-neutral-600 text-lg flex-1 mt-4 mb-2 leading-8 transition duration-300 transform hover:scale-105 mx-40">
+                  Unlocking the digital realm with my coding certifications.
+                </p>
+              </div>
+              <div className="sif-r">
+                <ul className="grid gap-6 mt-12 lg:grid-cols-5 px-8">
+                  {certificatesData.map((certificate, index) => (
+                    <li
+                      key={index}
+                      className="transition duration-300 transform hover:scale-105"
+                    >
+                      <a href={certificate.link} target="_blank">
                         <img
-                          src="https://media.licdn.com/dms/image/D560BAQH4mvGKR_wB-A/company-logo_100_100/0/1694683493177?e=1704326400&v=beta&t=4xXnG1QLO8QG2-T0Kt5QZsWThPqLCXbf0otttyKKkXQ"
+                          src={getCertificateImage(certificate.name)}
                           alt=""
-                          className="inline-block rounded w-[60px] h-[60px] mb-2"
+                          className="h-[160px]"
                         />
-                        <div className="py-auto flex-1 ml-4 mt-0.5">
-                          <h1 className="text-neutral-800 font-semibold text-md">
-                            Astra Credit Companies
-                          </h1>
-                          <p className="text-neutral-600 text-sm font-normal mt-0.5">
-                            Graphic Design Intern (Mar 2023 - Jun 2023)
+
+                        <div className="pt-1">
+                          <p className="text-neutral-800 font-bold text-md hover:underline line-clamp-1">
+                            {certificate.name}
+                          </p>
+                          <p className="text-neutral-600 text-sm transition duration-300 transform hover:scale-105">
+                            {certificate.issuer}
                           </p>
                         </div>
-                      </div>
-                      <p className="text-neutral-600 text-sm font-normal mt-1 leading-6">
-                        As a Graphic Design Intern, I created visually
-                        captivating graphics and collaborated with
-                        cross-functional teams, resulting in a 15% boost in
-                        social media engagement, including obtaining Instagram's
-                        verified status.
-                      </p>
-                    </article>
-                    <article className="drop-shadow rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6">
-                      <div className="flex">
-                        <img
-                          src="https://media.licdn.com/dms/image/C560BAQFN5mZsxgIpwQ/company-logo_100_100/0/1519867146123?e=1704326400&v=beta&t=-LqclD0twiY7oF3wYMKRMYduLGpOTSf65ZD64rQyRVE"
-                          alt=""
-                          className="inline-block rounded w-[60px] h-[60px] mb-2"
-                        />
-                        <div className="py-auto flex-1 ml-4 mt-0.5">
-                          <h1 className="text-neutral-800 font-semibold text-md">
-                            Tiket.com
-                          </h1>
-                          <p className="text-neutral-600 text-sm font-normal mt-0.5">
-                            Creative Design Intern (Apr 2022 - Dec 2022)
-                          </p>
-                        </div>
-                      </div>
-                      <p className="text-neutral-600 text-sm font-normal mt-1 leading-6">
-                        In my role as a Creative Designer Intern, I collaborated
-                        extensively with the marketing team to produce over 200
-                        engaging graphic designs for marketing materials,
-                        effectively promoting our transport services and
-                        maintaining a consistent visual brand identity across
-                        platforms.
-                      </p>
-                    </article>
-                  </div>
-                  <div>
-                    <article className="mb-6 drop-shadow rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6">
-                      <div className="flex">
-                        <img
-                          src="https://media.licdn.com/dms/image/C560BAQHrJ7F7DdlrrA/company-logo_100_100/0/1601352505975?e=1704326400&v=beta&t=_Nno0OJujcDSW8T4bF_nFhfKYQY4qohEyierT9yWZbg"
-                          alt=""
-                          className="inline-block rounded w-[60px] h-[60px] mb-2"
-                        />
-                        <div className="py-auto flex-1 ml-4 mt-0.5">
-                          <h1 className="text-neutral-800 font-semibold text-md">
-                            Bank Neo Commerce
-                          </h1>
-                          <p className="text-neutral-600 text-sm font-normal mt-0.5">
-                            Graphic Design Intern (Jan 2023 - Mar 2023)
-                          </p>
-                        </div>
-                      </div>
-                      <p className="text-neutral-600 text-sm font-normal mt-1 leading-6">
-                        During my internship as a Graphic Designer, I designed
-                        and delivered various materials, including recruitment
-                        brochures and website graphics, while establishing and
-                        maintaining a comprehensive visual style guide for
-                        consistent employer branding.
-                      </p>
-                    </article>
-                    <article className="drop-shadow rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6">
-                      <div className="flex">
-                        <img
-                          src="https://media.licdn.com/dms/image/D4D0BAQE_9YafdNTeGw/company-logo_100_100/0/1665127143046?e=1704326400&v=beta&t=pv2WqmMXq-yHzS0Xsg35KU39_15gUxo8Vl-juA9wikA"
-                          alt=""
-                          className="inline-block rounded w-[60px] h-[60px] mb-2"
-                        />
-                        <div className="py-auto flex-1 ml-4 mt-0.5">
-                          <h1 className="text-neutral-800 font-semibold text-md">
-                            TaniHub
-                          </h1>
-                          <p className="text-neutral-600 text-sm font-normal mt-0.5">
-                            Graphic Design Intern (Aug 2021 - Feb 2022)
-                          </p>
-                        </div>
-                      </div>
-                      <p className="text-neutral-600 text-sm font-normal mt-1 leading-6">
-                        As a Graphic Design Intern, I tracked industry trends,
-                        contributed to increased infographic and visual material
-                        production, and collaborated with the Corporate
-                        Communication team to convey the company's message and
-                        values through captivating graphics and presentations.
-                      </p>
-                    </article>
-                  </div>
-                </div>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="mb-8">
-          <div className="mx-auto max-w-screen-xl px-4 pt-8 sm:pt-12 sm:px-6 lg:pt-16 lg:px-8">
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
-              <div>
-                <h2 className="text-3xl font-bold sm:text-3xl text-neutral-800">
-                  Skills
-                </h2>
-
-                <div className="grid grid-cols-1 lg:grid-cols-4 mt-6 gap-8">
-                  <div className="col-span-3">
-                    <div className="mb-6">
-                      <h1 className="text-neutral-800 font-bold text-md">
-                        Programming Language
-                      </h1>
-                      <p className="text-neutral-600 text-md">JavaScript</p>
-                    </div>
-                    <div className="mb-6">
-                      <h1 className="text-neutral-800 font-bold text-md">
-                        Front End
-                      </h1>
-                      <p className="text-neutral-600 text-md">
-                        Vue JS, Pinia, React JS, Redux, React Native, HTML &
-                        CSS, Apollo Client, Tailwind
-                      </p>
-                    </div>
-                    <div className="mb-6">
-                      <h1 className="text-neutral-800 font-bold text-md">
-                        Back End
-                      </h1>
-                      <p className="text-neutral-600 text-md">
-                        Node JS, Express, Sequelize, PostgreSQL, GraphQL, Apollo
-                        Server, MongoDB, Redis, Rest API
-                      </p>
-                    </div>
-                    <div className="mb-6">
-                      <h1 className="text-neutral-800 font-bold text-md">
-                        Design Tools
-                      </h1>
-                      <p className="text-neutral-600 text-md">
-                        Figma, Adobe Illustrator, Adobe Photoshop, Adobe
-                        Premiere Pro, Adobe After Effect
-                      </p>
-                    </div>
-                  </div>
-                </div>
+        <section className="py-20">
+          <div className="mx-auto max-w-screen-xl sif-b">
+            <div>
+              <div className="sif-l">
+                <h1 className="text-4xl font-bold text-white text-center transition duration-300 transform hover:scale-105 mx-80">
+                  Keep in touch! ✨
+                </h1>
               </div>
-              <div>
-                <h2 className="text-3xl font-bold sm:text-3xl text-neutral-800">
-                  Certifications
-                </h2>
-
-                <div className="flex mt-7">
-                  <img
-                    src="https://media.licdn.com/dms/image/C560BAQEzEQ03yA8k5g/company-logo_100_100/0/1625980729352?e=1704326400&v=beta&t=3ZsbIyv2zrDFbyioegx9b9E0hhy5T4Ixko_MKZ2UgQ0"
-                    alt=""
-                    className="w-[52px] h-[52px] rounded-md mr-4 mt-1 object-cover"
-                  />
-                  <div>
-                    <h1 className="text-neutral-800 font-bold text-xl">
-                      BuildWithAngga
-                    </h1>
-                    <p className="text-neutral-600 text-sm">
-                      Complete UI Designer: Visual Design, Prototype, Usability
-                      Testing
-                    </p>
-                    <p className="text-neutral-600 text-sm mt-4">
-                      Certificate: {"  "}
-                      <a
-                        href="https://buildwithangga.com/"
-                        className="text-blue-600"
-                        target="_blank"
-                      >
-                        qj1hWVNcVP
-                      </a>
-                    </p>
-                    <p className="text-neutral-600 text-sm">
-                      Issued on October 2022
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex mt-7">
-                  <img
-                    src="https://media.licdn.com/dms/image/C510BAQFlVe4cQaiGAg/company-logo_100_100/0/1585123208944?e=1704326400&v=beta&t=kGYX6rDjsCNch7M5D8ZMOh4W1iy_v_3acJnRz1mv7zc"
-                    alt=""
-                    className="w-[52px] h-[52px] rounded-md mr-4 mt-1 object-cover"
-                  />
-                  <div>
-                    <h1 className="text-neutral-800 font-bold text-xl">
-                      Skilvul
-                    </h1>
-                    <p className="text-neutral-600 text-sm">
-                      UI/UX Design Mastery
-                    </p>
-                    <p className="text-neutral-600 text-sm mt-4">
-                      Certificate: {"  "}
-                      <a
-                        href="https://badgr.com/public/assertions/3CC3pcsvQ1OWCv2BxvrB0w?identity__email=wkresna511.kw@gmail.com"
-                        className="text-blue-600"
-                        target="_blank"
-                      >
-                        3CC3pcsvQ1OWCv2BxvrB0w
-                      </a>
-                    </p>
-                    <p className="text-neutral-600 text-sm">
-                      Issued on August 2022
-                    </p>
-                  </div>
-                </div>
+              <div className="sif-r flex text-center justify-center gap-12">
+                <a
+                  href="https://www.linkedin.com/in/kresnawijaya/"
+                  target="_blank"
+                  className="text-white text-lg mt-12 leading-8 transition duration-300 transform hover:scale-110"
+                >
+                  <button>LinkedIn ↗</button>
+                </a>
+                <a
+                  href="https://github.com/kresnawijayaa"
+                  target="_blank"
+                  className="text-white text-lg mt-12 leading-8 transition duration-300 transform hover:scale-110"
+                >
+                  <button>Github ↗</button>
+                </a>
+                <a
+                  href="mailto:kresnawijaya511@gmail.com"
+                  target="_blank"
+                  className="text-white text-lg mt-12 leading-8 transition duration-300 transform hover:scale-110"
+                >
+                  <button>kresnawijaya511@gmail.com ↗</button>
+                </a>
+                <a
+                  href="https://wa.me/6281314250902"
+                  target="_blank"
+                  className="text-white text-lg mt-12 leading-8 transition duration-300 transform hover:scale-110"
+                >
+                  <button>(WhatsApp) +62 813-1425-0902 ↗</button>
+                </a>
+                <a
+                  href="https://www.instagram.com/kresnawijaya__/"
+                  target="_blank"
+                  className="text-white text-lg mt-12 leading-8 transition duration-300 transform hover:scale-110"
+                >
+                  <button>✌️Instagram ↗</button>
+                </a>
               </div>
             </div>
           </div>

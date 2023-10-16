@@ -12,7 +12,7 @@ export default function Footer() {
             <div className="flex gap-4">
               <a href="https://github.com/kresnawijayaa" target="_blank">
                 <svg
-                  className="w-6 h-6 mr-1 text-white hover:scale-110 dark:text-white"
+                  className="w-6 h-6 mr-1 text-white hover:scale-125 dark:text-white"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -33,7 +33,7 @@ export default function Footer() {
                 target="_blank"
               >
                 <svg
-                  className="w-6 h-6 mr-1 text-white hover:scale-110 dark:text-white"
+                  className="w-6 h-6 mr-1 text-white hover:scale-125 dark:text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
                   viewBox="0 0 15 15"
