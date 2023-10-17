@@ -7,22 +7,6 @@ import Modal from "@mui/material/Modal";
 import "../SkillsSlideshow.css";
 import "../AnimatedElement.css";
 
-import {
-  dicoding1AwsImage,
-  dicoding2DasarJavascriptImage,
-  dicoding3DasarWebImage,
-  dicoding4BackendImage,
-  dicoding5FrontendImage,
-  forage1JpmorganImage,
-  forage2WalmartImage,
-  forage3SkyscannerImage,
-  hr1JavascriptImage,
-  hr2NodejsImage,
-  hr3ReactImage,
-  hr4SqlImage,
-  hr5CssImage,
-} from "../certificateImages";
-
 const experienceData = [
   {
     id: 1,
@@ -73,6 +57,7 @@ const certificatesData = [
     issuedDate: "October 2023",
     certificateNumber: "A9A9B5529E37",
     link: "https://www.hackerrank.com/certificates/a9a9b5529e37",
+    photo: "https://i.ibb.co/BzksPT3/hr1-javascript.jpg",
   },
   {
     name: "HackerRank SQL (Basic)",
@@ -80,6 +65,7 @@ const certificatesData = [
     issuedDate: "October 2023",
     certificateNumber: "2BC6BA5986EA",
     link: "https://www.hackerrank.com/certificates/2bc6ba5986ea",
+    photo: "https://i.ibb.co/KjWJ5W5/hr4-sql.jpg",
   },
   {
     name: "HackerRank Node (Basic)",
@@ -87,6 +73,7 @@ const certificatesData = [
     issuedDate: "October 2023",
     certificateNumber: "1C5D87D23CA5",
     link: "https://www.hackerrank.com/certificates/1c5d87d23ca5",
+    photo: "https://i.ibb.co/C1tLNLG/hr2-nodejs.jpg",
   },
   {
     name: "HackerRank React (Basic)",
@@ -94,6 +81,7 @@ const certificatesData = [
     issuedDate: "October 2023",
     certificateNumber: "602332E6ACDE",
     link: "https://www.hackerrank.com/certificates/602332e6acde",
+    photo: "https://i.ibb.co/vzvGMN6/hr3-react.jpg",
   },
   {
     name: "HackerRank CSS",
@@ -101,6 +89,7 @@ const certificatesData = [
     issuedDate: "October 2023",
     certificateNumber: "F7735C1C2E33",
     link: "https://www.hackerrank.com/certificates/f7735c1c2e33",
+    photo: "https://i.ibb.co/gz36Dp1/hr5-css.jpg",
   },
   {
     name: "Dasar Pemrograman JavaScript",
@@ -108,6 +97,7 @@ const certificatesData = [
     issuedDate: "October 2023",
     certificateNumber: "KEXLLQVNMXG2",
     link: "https://www.dicoding.com/certificates/KEXLLQVNMXG2",
+    photo: "https://i.ibb.co/34Zrs7g/dicoding2-dasar-javascript.jpg",
   },
   {
     name: "Dasar Pemrograman Web",
@@ -115,6 +105,7 @@ const certificatesData = [
     issuedDate: "October 2023",
     certificateNumber: "N9ZO5N1GYPG5",
     link: "https://www.dicoding.com/certificates/N9ZO5N1GYPG5",
+    photo: "https://i.ibb.co/YDVn8NG/dicoding3-dasar-web.jpg",
   },
   {
     name: "Membuat Aplikasi Back-End",
@@ -122,6 +113,7 @@ const certificatesData = [
     issuedDate: "October 2023",
     certificateNumber: "6RPN47JO4X2M",
     link: "https://www.dicoding.com/certificates/6RPN47JO4X2M",
+    photo: "https://i.ibb.co/LnYK0qG/dicoding4-backend.jpg",
   },
   {
     name: "Membuat Front-End Web",
@@ -129,6 +121,7 @@ const certificatesData = [
     issuedDate: "October 2023",
     certificateNumber: "EYX4YQN3RZDL",
     link: "https://www.dicoding.com/certificates/EYX4YQN3RZDL",
+    photo: "https://i.ibb.co/7zGqKbc/dicoding5-frontend.jpg",
   },
   {
     name: "Cloud Practitioner Essentials (Dasar AWS Cloud)",
@@ -136,6 +129,7 @@ const certificatesData = [
     issuedDate: "October 2023",
     certificateNumber: "GRX52WMRVX0M",
     link: "https://www.dicoding.com/certificates/GRX52WMRVX0M",
+    photo: "https://i.ibb.co/HxCdCfW/dicoding1-aws.jpg",
   },
   {
     name: "Software Engineering Virtual Experience Program",
@@ -143,6 +137,7 @@ const certificatesData = [
     issuedDate: "October 2023",
     certificateNumber: "zYfjp6nAX3RpyZKhr",
     link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/J.P.%20Morgan/R5iK7HMxJGBgaSbvk_J.P.%20Morgan_zYfjp6nAX3RpyZKhr_1697175738259_completion_certificate.pdf",
+    photo: "https://i.ibb.co/R20zcry/forage1-jpmorgan.jpg",
   },
   {
     name: "Advanced Software Engineering Virtual Experience Program",
@@ -150,6 +145,7 @@ const certificatesData = [
     issuedDate: "October 2023",
     certificateNumber: "zYfjp6nAX3RpyZKhr",
     link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Walmart%20USA/oX6f9BbCL9kJDJzfg_Walmart%20USA_zYfjp6nAX3RpyZKhr_1697125287850_completion_certificate.pdf",
+    photo: "https://i.ibb.co/tYN5btG/forage2-walmart.jpg",
   },
   {
     name: "Front-End Software Engineering Virtual Experience Program",
@@ -157,6 +153,7 @@ const certificatesData = [
     issuedDate: "October 2023",
     certificateNumber: "zYfjp6nAX3RpyZKhr",
     link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Skyscanner/km4rw7dihDr3etqom_Skyscanner_zYfjp6nAX3RpyZKhr_1697129593891_completion_certificate.pdf",
+    photo: "https://i.ibb.co/vBZz48w/forage3-skyscanner.jpg",
   },
 ];
 
@@ -795,39 +792,6 @@ const style = {
   borderRadius: 4,
 };
 
-function getCertificateImage(certificateName) {
-  switch (certificateName) {
-    case "HackerRank JavaScript (Basic)":
-      return hr1JavascriptImage;
-    case "HackerRank SQL (Basic)":
-      return hr4SqlImage;
-    case "HackerRank Node (Basic)":
-      return hr2NodejsImage;
-    case "HackerRank React (Basic)":
-      return hr3ReactImage;
-    case "HackerRank CSS":
-      return hr5CssImage;
-    case "Dasar Pemrograman JavaScript":
-      return dicoding2DasarJavascriptImage;
-    case "Dasar Pemrograman Web":
-      return dicoding3DasarWebImage;
-    case "Membuat Aplikasi Back-End":
-      return dicoding4BackendImage;
-    case "Membuat Front-End Web":
-      return dicoding5FrontendImage;
-    case "Cloud Practitioner Essentials (Dasar AWS Cloud)":
-      return dicoding1AwsImage;
-    case "Software Engineering Virtual Experience Program":
-      return forage1JpmorganImage;
-    case "Advanced Software Engineering Virtual Experience Program":
-      return forage2WalmartImage;
-    case "Front-End Software Engineering Virtual Experience Program":
-      return forage3SkyscannerImage;
-    default:
-      return ""; // Provide a default image or handle missing images
-  }
-}
-
 export default function About() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -1147,7 +1111,7 @@ export default function About() {
                     >
                       <a href={certificate.link} target="_blank">
                         <img
-                          src={getCertificateImage(certificate.name)}
+                          src={certificate.photo}
                           alt=""
                           className="h-[160px]"
                         />

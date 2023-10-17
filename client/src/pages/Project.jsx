@@ -116,14 +116,18 @@ export default function Project() {
         <section className="flex items-center justify-center text-center py-20">
           <div className="mx-auto max-w-screen-xl">
             <div>
-              <div className="sif-l">
-                <h1 className="text-6xl font-bold text-white text-center transition duration-300 transform hover:scale-105 mx-60">
-                  My Digital Creations 🌟
-                </h1>
-                <p className="text-white text-lg flex-1 mt-6 mb-2 leading-8 transition duration-300 transform hover:scale-105 mx-40">
-                  Welcome to my digital realm. Here, you'll find a showcase of
-                  my coding projects and creative endeavors.
-                </p>
+              <div>
+                <div className="sif-l">
+                  <h1 className="text-5xl font-bold text-white text-center transition duration-300 transform hover:scale-105 mx-60">
+                    My Digital Creations 🌟
+                  </h1>
+                </div>
+                <div className="sif-r">
+                  <p className="text-white text-lg flex-1 mt-6 mb-2 leading-8 transition duration-300 transform hover:scale-105 mx-40">
+                    Welcome to my digital realm. Here, you'll find a showcase of
+                    my coding projects and creative endeavors.
+                  </p>
+                </div>
               </div>
               <div className="sif-b">
                 <ul className="grid gap-12 mt-12 px-8">
