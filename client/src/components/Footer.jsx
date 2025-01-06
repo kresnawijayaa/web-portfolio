@@ -8,7 +8,7 @@ export default function Footer() {
         }}
       >
         <div className="relative mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
-          <div className="lg:flex lg:items-end lg:justify-between">
+          <div className="flex flex-col sm:flex-row sm:items-end items-center justify-between">
             <div className="flex gap-4">
               <a href="https://github.com/kresnawijayaa" target="_blank">
                 <svg
@@ -51,7 +51,7 @@ export default function Footer() {
               </a>
             </div>
 
-            <p className="text-center text-sm text-white lg:text-right">
+            <p className="text-center text-sm text-white lg:text-right sm:mx-0 mx-20 sm:mt-0 mt-6">
               Crafted by{" "}
               <span className="font-bold text-lg">Kresna Wijaya</span> with a
               touch of creativity 🎨

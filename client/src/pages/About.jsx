@@ -814,23 +814,25 @@ export default function About() {
           <div className="mx-auto max-w-screen-xl">
             <div>
               <div className="sif-l">
-                <h1 className="text-6xl font-bold text-white text-center transition duration-300 transform hover:scale-105 mx-80">
+                <h1 className="sm:text-6xl text-4xl font-bold text-white text-center transition duration-300 transform hover:scale-105 sm:mx-80 mx-6">
                   Kresna Wijaya{" "}
-                  <span className="font-medium text-2xl">· he/him</span>
+                  <span className="font-medium sm:text-2xl text-xl">
+                    · he/him
+                  </span>
                 </h1>
               </div>
               <div className="sif-r">
                 {" "}
-                <p className="text-white text-lg flex-1 mt-12 leading-8 transition duration-300 transform hover:scale-105 mx-40">
+                <p className="text-white sm:text-lg text-sm flex-1 mt-12 sm:leading-8 leading-7 transition duration-300 transform hover:scale-105 sm:mx-40 mx-6">
                   👨‍💻 a passionate software engineer from Jakarta, Indonesia.
                   Armed with a degree in Computer Science and bolstered by
                   Hacktiv8's Full Stack JavaScript bootcamp, I've refined my
                   skills in creating user-centric software that's both
-                  technically sound and aesthetically pleasing. Explore my
-                  portfolio to discover a seamless blend of code and creativity.
-                  My mission is to democratize technology and ensure it's not
-                  only robust but also delightful to use. Let's transform those
-                  tech visions into digital realities! 🌟.
+                  technically sound and aesthetically pleasing. I have 1 year of
+                  experience as a Full Stack Developer at Indomaret Group, where
+                  I've honed my abilities in building scalable and efficient web
+                  applications. Explore my portfolio to discover a seamless
+                  blend of code and creativity.
                 </p>
               </div>
             </div>
