@@ -217,12 +217,12 @@ const certifications = [
         link: "#",
         issued: "October 2023",
       },
-      { name: "Dasar Pemrograman Web", link: "#", issued: "October 2023" },
-      { name: "Membuat Aplikasi Back-End", link: "#", issued: "October 2023" },
-      { name: "Membuat Front-End Web", link: "#", issued: "October 2023" },
+      { name: "Dasar Pemrograman Web", link: "https://www.dicoding.com/certificates/N9ZO5N1GYPG5", issued: "October 2023" },
+      { name: "Membuat Aplikasi Back-End", link: "https://www.dicoding.com/certificates/6RPN47JO4X2M", issued: "October 2023" },
+      { name: "Membuat Front-End Web", link: "https://www.dicoding.com/certificates/EYX4YQN3RZDL", issued: "October 2023" },
       {
         name: "Cloud Practitioner Essentials (AWS)",
-        link: "#",
+        link: "https://www.dicoding.com/certificates/GRX52WMRVX0M",
         issued: "October 2023",
       },
     ],
@@ -231,8 +231,8 @@ const certifications = [
     title: "BuildWithAngga",
     items: [
       {
-        name: "Complete UI Designer: Visual Design, Prototype, Usability Testing",
-        link: "#",
+        name: "Complete UI Designer: Visual Design, Prototype, Usability Testing (qj1hWVNcVP)",
+        link: "https://buildwithangga.com/cek-sertifikat",
         issued: "October 2022",
       },
     ],
@@ -242,7 +242,7 @@ const certifications = [
     items: [
       {
         name: "UI/UX Design Mastery",
-        link: "#",
+        link: "https://skilvul.com/courses/uiux-design-mastery/student/cklhgzxllbvax0757eewbeewx/",
         issued: "August 2022",
       },
     ],
@@ -263,6 +263,14 @@ const skillData = [
     logo: "https://cdn-icons-png.flaticon.com/128/5968/5968292.png",
   },
   {
+    name: "C#",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Logo_C_sharp.svg/1200px-Logo_C_sharp.svg.png",
+  },
+  {
+    name: "Python",
+    logo: "https://cdn.iconscout.com/icon/free/png-256/free-python-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-vol-5-pack-logos-icons-2945099.png?f=webp&w=256",
+  },
+  {
     name: "Vue JS",
     logo: "https://docs.vuejs.id/images/logo.png",
   },
@@ -295,6 +303,10 @@ const skillData = [
     logo: "https://sequelize.org/img/logo.svg",
   },
   {
+    name: ".NET",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Microsoft_.NET_logo.svg/1024px-Microsoft_.NET_logo.svg.png",
+  },
+  {
     name: "PostgreSQL",
     logo: "https://www.postgresql.org/media/img/about/press/elephant.png",
   },
@@ -305,6 +317,10 @@ const skillData = [
   {
     name: "Firestore",
     logo: "https://static-00.iconduck.com/assets.00/file-type-firestore-icon-1780x2048-0rzupks3.png",
+  },
+  {
+    name: "Oracle",
+    logo: "https://capitalhillgroup.ca/wp-content/uploads/2020/07/Oracle-Logo-Square-Micro-SP-300x300.jpg",
   },
   {
     name: "Docker",
@@ -347,6 +363,14 @@ const skillData = [
     logo: "https://cdn-icons-png.flaticon.com/128/5968/5968292.png",
   },
   {
+    name: "C#",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Logo_C_sharp.svg/1200px-Logo_C_sharp.svg.png",
+  },
+  {
+    name: "Python",
+    logo: "https://cdn.iconscout.com/icon/free/png-256/free-python-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-vol-5-pack-logos-icons-2945099.png?f=webp&w=256",
+  },
+  {
     name: "Vue JS",
     logo: "https://docs.vuejs.id/images/logo.png",
   },
@@ -379,6 +403,10 @@ const skillData = [
     logo: "https://sequelize.org/img/logo.svg",
   },
   {
+    name: ".NET",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Microsoft_.NET_logo.svg/1024px-Microsoft_.NET_logo.svg.png",
+  },
+  {
     name: "PostgreSQL",
     logo: "https://www.postgresql.org/media/img/about/press/elephant.png",
   },
@@ -389,6 +417,10 @@ const skillData = [
   {
     name: "Firestore",
     logo: "https://static-00.iconduck.com/assets.00/file-type-firestore-icon-1780x2048-0rzupks3.png",
+  },
+  {
+    name: "Oracle",
+    logo: "https://capitalhillgroup.ca/wp-content/uploads/2020/07/Oracle-Logo-Square-Micro-SP-300x300.jpg",
   },
   {
     name: "Docker",
@@ -431,6 +463,14 @@ const skillData = [
     logo: "https://cdn-icons-png.flaticon.com/128/5968/5968292.png",
   },
   {
+    name: "C#",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Logo_C_sharp.svg/1200px-Logo_C_sharp.svg.png",
+  },
+  {
+    name: "Python",
+    logo: "https://cdn.iconscout.com/icon/free/png-256/free-python-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-vol-5-pack-logos-icons-2945099.png?f=webp&w=256",
+  },
+  {
     name: "Vue JS",
     logo: "https://docs.vuejs.id/images/logo.png",
   },
@@ -463,6 +503,10 @@ const skillData = [
     logo: "https://sequelize.org/img/logo.svg",
   },
   {
+    name: ".NET",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Microsoft_.NET_logo.svg/1024px-Microsoft_.NET_logo.svg.png",
+  },
+  {
     name: "PostgreSQL",
     logo: "https://www.postgresql.org/media/img/about/press/elephant.png",
   },
@@ -473,6 +517,10 @@ const skillData = [
   {
     name: "Firestore",
     logo: "https://static-00.iconduck.com/assets.00/file-type-firestore-icon-1780x2048-0rzupks3.png",
+  },
+  {
+    name: "Oracle",
+    logo: "https://capitalhillgroup.ca/wp-content/uploads/2020/07/Oracle-Logo-Square-Micro-SP-300x300.jpg",
   },
   {
     name: "Docker",
@@ -539,36 +587,8 @@ const skillData2 = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo-ubuntu_cof-orange-hex.svg/1200px-Logo-ubuntu_cof-orange-hex.svg.png",
   },
   {
-    name: "AWS",
-    logo: "https://seeklogo.com/images/A/amazon-web-services-aws-logo-6C2E3DCD3E-seeklogo.com.png",
-  },
-  {
-    name: "Firebase",
-    logo: "https://brandeps.com/logo-download/F/Firebase-logo-02.png",
-  },
-  {
-    name: "Github",
-    logo: "https://cdn-icons-png.flaticon.com/512/25/25231.png",
-  },
-  {
-    name: "VSCode",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png",
-  },
-  {
-    name: "NPM",
-    logo: "https://static-00.iconduck.com/assets.00/npm-icon-2048x2048-3xqnd60o.png",
-  },
-  {
-    name: "Postman",
-    logo: "https://www.svgrepo.com/show/354202/postman-icon.svg",
-  },
-  {
-    name: "Vite",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1039px-Vitejs-logo.svg.png",
-  },
-  {
-    name: "Ubuntu",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo-ubuntu_cof-orange-hex.svg/1200px-Logo-ubuntu_cof-orange-hex.svg.png",
+    name: "Nginx",
+    logo: "https://static-00.iconduck.com/assets.00/nginx-icon-444x512-0meva297.png",
   },
   {
     name: "AWS",
@@ -603,36 +623,8 @@ const skillData2 = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo-ubuntu_cof-orange-hex.svg/1200px-Logo-ubuntu_cof-orange-hex.svg.png",
   },
   {
-    name: "AWS",
-    logo: "https://seeklogo.com/images/A/amazon-web-services-aws-logo-6C2E3DCD3E-seeklogo.com.png",
-  },
-  {
-    name: "Firebase",
-    logo: "https://brandeps.com/logo-download/F/Firebase-logo-02.png",
-  },
-  {
-    name: "Github",
-    logo: "https://cdn-icons-png.flaticon.com/512/25/25231.png",
-  },
-  {
-    name: "VSCode",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png",
-  },
-  {
-    name: "NPM",
-    logo: "https://static-00.iconduck.com/assets.00/npm-icon-2048x2048-3xqnd60o.png",
-  },
-  {
-    name: "Postman",
-    logo: "https://www.svgrepo.com/show/354202/postman-icon.svg",
-  },
-  {
-    name: "Vite",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1039px-Vitejs-logo.svg.png",
-  },
-  {
-    name: "Ubuntu",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo-ubuntu_cof-orange-hex.svg/1200px-Logo-ubuntu_cof-orange-hex.svg.png",
+    name: "Nginx",
+    logo: "https://static-00.iconduck.com/assets.00/nginx-icon-444x512-0meva297.png",
   },
   {
     name: "AWS",
@@ -667,6 +659,10 @@ const skillData2 = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo-ubuntu_cof-orange-hex.svg/1200px-Logo-ubuntu_cof-orange-hex.svg.png",
   },
   {
+    name: "Nginx",
+    logo: "https://static-00.iconduck.com/assets.00/nginx-icon-444x512-0meva297.png",
+  },
+  {
     name: "AWS",
     logo: "https://seeklogo.com/images/A/amazon-web-services-aws-logo-6C2E3DCD3E-seeklogo.com.png",
   },
@@ -697,6 +693,82 @@ const skillData2 = [
   {
     name: "Ubuntu",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo-ubuntu_cof-orange-hex.svg/1200px-Logo-ubuntu_cof-orange-hex.svg.png",
+  },
+  {
+    name: "Nginx",
+    logo: "https://static-00.iconduck.com/assets.00/nginx-icon-444x512-0meva297.png",
+  },
+  {
+    name: "AWS",
+    logo: "https://seeklogo.com/images/A/amazon-web-services-aws-logo-6C2E3DCD3E-seeklogo.com.png",
+  },
+  {
+    name: "Firebase",
+    logo: "https://brandeps.com/logo-download/F/Firebase-logo-02.png",
+  },
+  {
+    name: "Github",
+    logo: "https://cdn-icons-png.flaticon.com/512/25/25231.png",
+  },
+  {
+    name: "VSCode",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png",
+  },
+  {
+    name: "NPM",
+    logo: "https://static-00.iconduck.com/assets.00/npm-icon-2048x2048-3xqnd60o.png",
+  },
+  {
+    name: "Postman",
+    logo: "https://www.svgrepo.com/show/354202/postman-icon.svg",
+  },
+  {
+    name: "Vite",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1039px-Vitejs-logo.svg.png",
+  },
+  {
+    name: "Ubuntu",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo-ubuntu_cof-orange-hex.svg/1200px-Logo-ubuntu_cof-orange-hex.svg.png",
+  },
+  {
+    name: "Nginx",
+    logo: "https://static-00.iconduck.com/assets.00/nginx-icon-444x512-0meva297.png",
+  },
+  {
+    name: "AWS",
+    logo: "https://seeklogo.com/images/A/amazon-web-services-aws-logo-6C2E3DCD3E-seeklogo.com.png",
+  },
+  {
+    name: "Firebase",
+    logo: "https://brandeps.com/logo-download/F/Firebase-logo-02.png",
+  },
+  {
+    name: "Github",
+    logo: "https://cdn-icons-png.flaticon.com/512/25/25231.png",
+  },
+  {
+    name: "VSCode",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png",
+  },
+  {
+    name: "NPM",
+    logo: "https://static-00.iconduck.com/assets.00/npm-icon-2048x2048-3xqnd60o.png",
+  },
+  {
+    name: "Postman",
+    logo: "https://www.svgrepo.com/show/354202/postman-icon.svg",
+  },
+  {
+    name: "Vite",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1039px-Vitejs-logo.svg.png",
+  },
+  {
+    name: "Ubuntu",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo-ubuntu_cof-orange-hex.svg/1200px-Logo-ubuntu_cof-orange-hex.svg.png",
+  },
+  {
+    name: "Nginx",
+    logo: "https://static-00.iconduck.com/assets.00/nginx-icon-444x512-0meva297.png",
   },
   // Add more skills
 ];
@@ -1027,7 +1099,7 @@ export default function About() {
                     <h1 className='text-neutral-800 font-bold text-md'>
                       Programming Language
                     </h1>
-                    <p className='text-neutral-600 text-md'>JavaScript</p>
+                    <p className='text-neutral-600 text-md'>JavaScript, C#, Python</p>
                   </div>
                   <div className='mb-4'>
                     <h1 className='text-neutral-800 font-bold text-md'>
@@ -1043,7 +1115,7 @@ export default function About() {
                       Back End
                     </h1>
                     <p className='text-neutral-600 text-md'>
-                      Node JS, Express JS, Sequelize
+                      Node JS, Express JS, Sequelize, ASP.NET
                     </p>
                   </div>
                   <div className='mb-4'>
@@ -1051,7 +1123,7 @@ export default function About() {
                       Databases
                     </h1>
                     <p className='text-neutral-600 text-md'>
-                      PostgreSQL, MongoDB, Firestore
+                      PostgreSQL, MongoDB, Firestore, Oracle
                     </p>
                   </div>
                   <div className='mb-4'>
@@ -1060,7 +1132,7 @@ export default function About() {
                     </h1>
                     <p className='text-neutral-600 text-md'>
                       GraphQL, Jest, Pinia, Redux, JWT, Docker, AWS, Firebase,
-                      Vite, Postman, NPM, VSCode, Github, Ubuntu
+                      Vite, Postman, NPM, VSCode, Github, Ubuntu, Nginx
                     </p>
                   </div>
                   <div>
