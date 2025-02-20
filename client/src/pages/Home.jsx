@@ -65,7 +65,7 @@ export default function Home() {
 
                 <div className="sm:mt-8 mt-6 flex gap-6 sm:gap-8 justify-center">
                   <a
-                    href="https://drive.google.com/file/d/1-dlmyPXQpQt5Kk7qQUQOd69hbGrV6x-_/view?usp=sharing"
+                    href="https://drive.google.com/file/d/18SCPQ1sYUhWe2jp_XhUvlW4M-hfrC1No/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-bold text-white sm:text-lg text-sm my-auto transition duration-300 transform hover:scale-110 hover:border-b border-white flex items-center gap-1"
