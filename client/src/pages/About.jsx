@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import { FiExternalLink } from "react-icons/fi";
 
 import "../SkillsSlideshow.css";
 import "../AnimatedElement.css";
@@ -10,150 +11,241 @@ import "../AnimatedElement.css";
 const experienceData = [
   {
     id: 1,
+    companyName: "Indomaret Group",
+    role: "Full Stack Developer",
+    date: "Jan 2025 - Present",
+    description:
+      "Working at Indomaret Group (Head Office) as a Full Stack Developer in the IT Software Development 3 division, focusing on logistics and distribution center operations. Responsible for maintaining and improving applications that support 100+ DCs and 20,000+ Indomaret stores, ensuring system reliability and efficiency through database optimization (Oracle, PostgreSQL) and scalable deployments with Docker and Nginx.",
+    logoUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvlaHLTwYDO3yEDfpNPUfdYm_sBAfIxeLO3g&s",
+  },
+  {
+    id: 2,
+    companyName: "Indomaret Group",
+    role: "MDP IT Specialist",
+    date: "Jan 2024 - Jan 2025",
+    description:
+      "Developed expertise in Indomaret Group’s tech stack, including C#, .NET, VB, Oracle, PostgreSQL, Docker, and Nginx. Successfully handled 20+ applications (desktop, web, API, Windows services) and contributed to logistics systems supporting 100+ distribution centers and 20,000+ stores across Indonesia.",
+    logoUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvlaHLTwYDO3yEDfpNPUfdYm_sBAfIxeLO3g&s",
+  },
+  {
+    id: 3,
     companyName: "Astra Credit Companies",
     role: "Graphic Design Intern",
     date: "Mar 2023 - Jun 2023",
     description:
       "As a Graphic Design Intern, I created visually captivating graphics and collaborated with cross-functional teams, resulting in a 15% boost in social media engagement, including obtaining Instagram's verified status.",
     logoUrl:
-      "https://media.licdn.com/dms/image/D560BAQH4mvGKR_wB-A/company-logo_100_100/0/1694683493177?e=1704326400&v=beta&t=4xXnG1QLO8QG2-T0Kt5QZsWThPqLCXbf0otttyKKkXQ",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2KiJQzbaOPQ0IAQogkH7PElRynf0SeCD6Hg&s",
   },
   {
-    id: 2,
+    id: 4,
     companyName: "Bank Neo Commerce",
     role: "Graphic Design Intern",
     date: "Jan 2023 - Mar 2023",
     description:
       "During my internship as a Graphic Designer, I designed and delivered various materials, including recruitment brochures and website graphics, while establishing and maintaining a comprehensive visual style guide for consistent employer branding.",
     logoUrl:
-      "https://media.licdn.com/dms/image/C560BAQHrJ7F7DdlrrA/company-logo_100_100/0/1601352505975?e=1704326400&v=beta&t=_Nno0OJujcDSW8T4bF_nFhfKYQY4qohEyierT9yWZbg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRozuDlU2KZbHea740euVjteMCXhGSAxbjiKw&s",
   },
   {
-    id: 3,
+    id: 5,
     companyName: "Tiket.com",
     role: "Creative Design Intern",
     date: "Apr 2022 - Dec 2022",
     description:
       "In my role as a Creative Designer Intern, I collaborated extensively with the marketing team to produce over 200 engaging graphic designs for marketing materials, effectively promoting our transport services and maintaining a consistent visual brand identity across platforms.",
     logoUrl:
-      "https://media.licdn.com/dms/image/C560BAQFN5mZsxgIpwQ/company-logo_100_100/0/1519867146123?e=1704326400&v=beta&t=-LqclD0twiY7oF3wYMKRMYduLGpOTSf65ZD64rQyRVE",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAYgVdJJW9aBRqyNWaMESB4xuXB_9fuL3ZPg&s",
   },
   {
-    id: 4,
+    id: 6,
     companyName: "TaniHub",
     role: "Graphic Design Intern",
     date: "Aug 2021 - Feb 2022",
     description:
       "As a Graphic Design Intern, I tracked industry trends, contributed to increased infographic and visual material production, and collaborated with the Corporate Communication team to convey the company's message and values through captivating graphics and presentations.",
     logoUrl:
-      "https://media.licdn.com/dms/image/D4D0BAQE_9YafdNTeGw/company-logo_100_100/0/1665127143046?e=1704326400&v=beta&t=pv2WqmMXq-yHzS0Xsg35KU39_15gUxo8Vl-juA9wikA",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScKpQvVEER_6dfdVukKUJW4hI3RPJNtKIATg&s",
   },
 ];
 
-const certificatesData = [
+// const certificatesData = [
+//   {
+//     name: "HackerRank JavaScript (Basic)",
+//     issuer: "HackerRank",
+//     issuedDate: "October 2023",
+//     certificateNumber: "A9A9B5529E37",
+//     link: "https://www.hackerrank.com/certificates/a9a9b5529e37",
+//     photo: "https://i.ibb.co/BzksPT3/hr1-javascript.jpg",
+//   },
+//   {
+//     name: "HackerRank SQL (Basic)",
+//     issuer: "HackerRank",
+//     issuedDate: "October 2023",
+//     certificateNumber: "2BC6BA5986EA",
+//     link: "https://www.hackerrank.com/certificates/2bc6ba5986ea",
+//     photo: "https://i.ibb.co/KjWJ5W5/hr4-sql.jpg",
+//   },
+//   {
+//     name: "HackerRank Node (Basic)",
+//     issuer: "HackerRank",
+//     issuedDate: "October 2023",
+//     certificateNumber: "1C5D87D23CA5",
+//     link: "https://www.hackerrank.com/certificates/1c5d87d23ca5",
+//     photo: "https://i.ibb.co/C1tLNLG/hr2-nodejs.jpg",
+//   },
+//   {
+//     name: "HackerRank React (Basic)",
+//     issuer: "HackerRank",
+//     issuedDate: "October 2023",
+//     certificateNumber: "602332E6ACDE",
+//     link: "https://www.hackerrank.com/certificates/602332e6acde",
+//     photo: "https://i.ibb.co/vzvGMN6/hr3-react.jpg",
+//   },
+//   {
+//     name: "HackerRank CSS",
+//     issuer: "HackerRank",
+//     issuedDate: "October 2023",
+//     certificateNumber: "F7735C1C2E33",
+//     link: "https://www.hackerrank.com/certificates/f7735c1c2e33",
+//     photo: "https://i.ibb.co/gz36Dp1/hr5-css.jpg",
+//   },
+//   {
+//     name: "Dasar Pemrograman JavaScript",
+//     issuer: "Dicoding Indonesia",
+//     issuedDate: "October 2023",
+//     certificateNumber: "KEXLLQVNMXG2",
+//     link: "https://www.dicoding.com/certificates/KEXLLQVNMXG2",
+//     photo: "https://i.ibb.co/34Zrs7g/dicoding2-dasar-javascript.jpg",
+//   },
+//   {
+//     name: "Dasar Pemrograman Web",
+//     issuer: "Dicoding Indonesia",
+//     issuedDate: "October 2023",
+//     certificateNumber: "N9ZO5N1GYPG5",
+//     link: "https://www.dicoding.com/certificates/N9ZO5N1GYPG5",
+//     photo: "https://i.ibb.co/YDVn8NG/dicoding3-dasar-web.jpg",
+//   },
+//   {
+//     name: "Membuat Aplikasi Back-End",
+//     issuer: "Dicoding Indonesia",
+//     issuedDate: "October 2023",
+//     certificateNumber: "6RPN47JO4X2M",
+//     link: "https://www.dicoding.com/certificates/6RPN47JO4X2M",
+//     photo: "https://i.ibb.co/LnYK0qG/dicoding4-backend.jpg",
+//   },
+//   {
+//     name: "Membuat Front-End Web",
+//     issuer: "Dicoding Indonesia",
+//     issuedDate: "October 2023",
+//     certificateNumber: "EYX4YQN3RZDL",
+//     link: "https://www.dicoding.com/certificates/EYX4YQN3RZDL",
+//     photo: "https://i.ibb.co/7zGqKbc/dicoding5-frontend.jpg",
+//   },
+//   {
+//     name: "Cloud Practitioner Essentials (Dasar AWS Cloud)",
+//     issuer: "Dicoding Indonesia",
+//     issuedDate: "October 2023",
+//     certificateNumber: "GRX52WMRVX0M",
+//     link: "https://www.dicoding.com/certificates/GRX52WMRVX0M",
+//     photo: "https://i.ibb.co/HxCdCfW/dicoding1-aws.jpg",
+//   },
+//   {
+//     name: "Software Engineering Virtual Experience Program",
+//     issuer: "JPMorgan Chase & Co.",
+//     issuedDate: "October 2023",
+//     certificateNumber: "zYfjp6nAX3RpyZKhr",
+//     link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/J.P.%20Morgan/R5iK7HMxJGBgaSbvk_J.P.%20Morgan_zYfjp6nAX3RpyZKhr_1697175738259_completion_certificate.pdf",
+//     photo: "https://i.ibb.co/R20zcry/forage1-jpmorgan.jpg",
+//   },
+//   {
+//     name: "Advanced Software Engineering Virtual Experience Program",
+//     issuer: "Walmart Global Tech",
+//     issuedDate: "October 2023",
+//     certificateNumber: "zYfjp6nAX3RpyZKhr",
+//     link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Walmart%20USA/oX6f9BbCL9kJDJzfg_Walmart%20USA_zYfjp6nAX3RpyZKhr_1697125287850_completion_certificate.pdf",
+//     photo: "https://i.ibb.co/tYN5btG/forage2-walmart.jpg",
+//   },
+//   {
+//     name: "Front-End Software Engineering Virtual Experience Program",
+//     issuer: "Skyscanner",
+//     issuedDate: "October 2023",
+//     certificateNumber: "zYfjp6nAX3RpyZKhr",
+//     link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Skyscanner/km4rw7dihDr3etqom_Skyscanner_zYfjp6nAX3RpyZKhr_1697129593891_completion_certificate.pdf",
+//     photo: "https://i.ibb.co/vBZz48w/forage3-skyscanner.jpg",
+//   },
+// ];
+
+const certifications = [
   {
-    name: "HackerRank JavaScript (Basic)",
-    issuer: "HackerRank",
-    issuedDate: "October 2023",
-    certificateNumber: "A9A9B5529E37",
-    link: "https://www.hackerrank.com/certificates/a9a9b5529e37",
-    photo: "https://i.ibb.co/BzksPT3/hr1-javascript.jpg",
+    title: "HackerRank",
+    items: [
+      {
+        name: "JavaScript (Intermediate)",
+        link: "https://www.hackerrank.com/certificates/7d70d18e76a8",
+        issued: "October 2023",
+      },
+      {
+        name: "SQL (Intermediate)",
+        link: "https://www.hackerrank.com/certificates/ef5b5a4ca8ef",
+        issued: "October 2023",
+      },
+      {
+        name: "Node (Basic)",
+        link: "https://www.hackerrank.com/certificates/1c5d87d23ca5",
+        issued: "October 2023",
+      },
+      {
+        name: "React (Basic)",
+        link: "https://www.hackerrank.com/certificates/602332e6acde",
+        issued: "October 2023",
+      },
+      {
+        name: "CSS",
+        link: "https://www.hackerrank.com/certificates/f7735c1c2e33",
+        issued: "October 2023",
+      },
+    ],
   },
   {
-    name: "HackerRank SQL (Basic)",
-    issuer: "HackerRank",
-    issuedDate: "October 2023",
-    certificateNumber: "2BC6BA5986EA",
-    link: "https://www.hackerrank.com/certificates/2bc6ba5986ea",
-    photo: "https://i.ibb.co/KjWJ5W5/hr4-sql.jpg",
+    title: "Dicoding Indonesia",
+    items: [
+      {
+        name: "Dasar Pemrograman JavaScript",
+        link: "#",
+        issued: "October 2023",
+      },
+      { name: "Dasar Pemrograman Web", link: "#", issued: "October 2023" },
+      { name: "Membuat Aplikasi Back-End", link: "#", issued: "October 2023" },
+      { name: "Membuat Front-End Web", link: "#", issued: "October 2023" },
+      {
+        name: "Cloud Practitioner Essentials (AWS)",
+        link: "#",
+        issued: "October 2023",
+      },
+    ],
   },
   {
-    name: "HackerRank Node (Basic)",
-    issuer: "HackerRank",
-    issuedDate: "October 2023",
-    certificateNumber: "1C5D87D23CA5",
-    link: "https://www.hackerrank.com/certificates/1c5d87d23ca5",
-    photo: "https://i.ibb.co/C1tLNLG/hr2-nodejs.jpg",
+    title: "BuildWithAngga",
+    items: [
+      {
+        name: "Complete UI Designer: Visual Design, Prototype, Usability Testing",
+        link: "#",
+        issued: "October 2022",
+      },
+    ],
   },
   {
-    name: "HackerRank React (Basic)",
-    issuer: "HackerRank",
-    issuedDate: "October 2023",
-    certificateNumber: "602332E6ACDE",
-    link: "https://www.hackerrank.com/certificates/602332e6acde",
-    photo: "https://i.ibb.co/vzvGMN6/hr3-react.jpg",
-  },
-  {
-    name: "HackerRank CSS",
-    issuer: "HackerRank",
-    issuedDate: "October 2023",
-    certificateNumber: "F7735C1C2E33",
-    link: "https://www.hackerrank.com/certificates/f7735c1c2e33",
-    photo: "https://i.ibb.co/gz36Dp1/hr5-css.jpg",
-  },
-  {
-    name: "Dasar Pemrograman JavaScript",
-    issuer: "Dicoding Indonesia",
-    issuedDate: "October 2023",
-    certificateNumber: "KEXLLQVNMXG2",
-    link: "https://www.dicoding.com/certificates/KEXLLQVNMXG2",
-    photo: "https://i.ibb.co/34Zrs7g/dicoding2-dasar-javascript.jpg",
-  },
-  {
-    name: "Dasar Pemrograman Web",
-    issuer: "Dicoding Indonesia",
-    issuedDate: "October 2023",
-    certificateNumber: "N9ZO5N1GYPG5",
-    link: "https://www.dicoding.com/certificates/N9ZO5N1GYPG5",
-    photo: "https://i.ibb.co/YDVn8NG/dicoding3-dasar-web.jpg",
-  },
-  {
-    name: "Membuat Aplikasi Back-End",
-    issuer: "Dicoding Indonesia",
-    issuedDate: "October 2023",
-    certificateNumber: "6RPN47JO4X2M",
-    link: "https://www.dicoding.com/certificates/6RPN47JO4X2M",
-    photo: "https://i.ibb.co/LnYK0qG/dicoding4-backend.jpg",
-  },
-  {
-    name: "Membuat Front-End Web",
-    issuer: "Dicoding Indonesia",
-    issuedDate: "October 2023",
-    certificateNumber: "EYX4YQN3RZDL",
-    link: "https://www.dicoding.com/certificates/EYX4YQN3RZDL",
-    photo: "https://i.ibb.co/7zGqKbc/dicoding5-frontend.jpg",
-  },
-  {
-    name: "Cloud Practitioner Essentials (Dasar AWS Cloud)",
-    issuer: "Dicoding Indonesia",
-    issuedDate: "October 2023",
-    certificateNumber: "GRX52WMRVX0M",
-    link: "https://www.dicoding.com/certificates/GRX52WMRVX0M",
-    photo: "https://i.ibb.co/HxCdCfW/dicoding1-aws.jpg",
-  },
-  {
-    name: "Software Engineering Virtual Experience Program",
-    issuer: "JPMorgan Chase & Co.",
-    issuedDate: "October 2023",
-    certificateNumber: "zYfjp6nAX3RpyZKhr",
-    link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/J.P.%20Morgan/R5iK7HMxJGBgaSbvk_J.P.%20Morgan_zYfjp6nAX3RpyZKhr_1697175738259_completion_certificate.pdf",
-    photo: "https://i.ibb.co/R20zcry/forage1-jpmorgan.jpg",
-  },
-  {
-    name: "Advanced Software Engineering Virtual Experience Program",
-    issuer: "Walmart Global Tech",
-    issuedDate: "October 2023",
-    certificateNumber: "zYfjp6nAX3RpyZKhr",
-    link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Walmart%20USA/oX6f9BbCL9kJDJzfg_Walmart%20USA_zYfjp6nAX3RpyZKhr_1697125287850_completion_certificate.pdf",
-    photo: "https://i.ibb.co/tYN5btG/forage2-walmart.jpg",
-  },
-  {
-    name: "Front-End Software Engineering Virtual Experience Program",
-    issuer: "Skyscanner",
-    issuedDate: "October 2023",
-    certificateNumber: "zYfjp6nAX3RpyZKhr",
-    link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Skyscanner/km4rw7dihDr3etqom_Skyscanner_zYfjp6nAX3RpyZKhr_1697129593891_completion_certificate.pdf",
-    photo: "https://i.ibb.co/vBZz48w/forage3-skyscanner.jpg",
+    title: "Skilvul",
+    items: [
+      {
+        name: "UI/UX Design Mastery",
+        link: "#",
+        issued: "August 2022",
+      },
+    ],
   },
 ];
 
@@ -184,11 +276,11 @@ const skillData = [
   },
   {
     name: "Tailwind",
-    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/96/file_type_tailwind_icon_130128.png",
+    logo: "https://seeklogo.com/images/T/tailwind-css-logo-5AD4175897-seeklogo.com.png",
   },
   {
     name: "jQuery",
-    logo: "https://cdn.icon-icons.com/icons2/2699/PNG/512/jquery_logo_icon_167804.png",
+    logo: "https://static-00.iconduck.com/assets.00/jquery-original-wordmark-icon-485x512-7kn0h2yt.png",
   },
   {
     name: "Node JS",
@@ -208,7 +300,7 @@ const skillData = [
   },
   {
     name: "MongoDB",
-    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_mongo_icon_130383.png",
+    logo: "https://www.svgrepo.com/show/331488/mongodb.svg",
   },
   {
     name: "Firestore",
@@ -216,7 +308,7 @@ const skillData = [
   },
   {
     name: "Docker",
-    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/96/file_type_docker_icon_130643.png",
+    logo: "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-512.png",
   },
   {
     name: "Redux",
@@ -228,7 +320,7 @@ const skillData = [
   },
   {
     name: "GraphQL",
-    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_graphql_icon_130564.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/512px-GraphQL_Logo.svg.png",
   },
   {
     name: "Apollo",
@@ -236,7 +328,7 @@ const skillData = [
   },
   {
     name: "Redis",
-    logo: "https://cdn.icon-icons.com/icons2/2415/PNG/96/redis_original_logo_icon_146368.png",
+    logo: "https://cdn.iconscout.com/icon/free/png-256/free-redis-logo-icon-download-in-svg-png-gif-file-formats--programming-langugae-freebies-pack-logos-icons-1175103.png?f=webp&w=256",
   },
   {
     name: "Jest",
@@ -268,11 +360,11 @@ const skillData = [
   },
   {
     name: "Tailwind",
-    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/96/file_type_tailwind_icon_130128.png",
+    logo: "https://seeklogo.com/images/T/tailwind-css-logo-5AD4175897-seeklogo.com.png",
   },
   {
     name: "jQuery",
-    logo: "https://cdn.icon-icons.com/icons2/2699/PNG/512/jquery_logo_icon_167804.png",
+    logo: "https://static-00.iconduck.com/assets.00/jquery-original-wordmark-icon-485x512-7kn0h2yt.png",
   },
   {
     name: "Node JS",
@@ -292,7 +384,7 @@ const skillData = [
   },
   {
     name: "MongoDB",
-    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_mongo_icon_130383.png",
+    logo: "https://www.svgrepo.com/show/331488/mongodb.svg",
   },
   {
     name: "Firestore",
@@ -300,7 +392,7 @@ const skillData = [
   },
   {
     name: "Docker",
-    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/96/file_type_docker_icon_130643.png",
+    logo: "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-512.png",
   },
   {
     name: "Redux",
@@ -312,7 +404,7 @@ const skillData = [
   },
   {
     name: "GraphQL",
-    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_graphql_icon_130564.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/512px-GraphQL_Logo.svg.png",
   },
   {
     name: "Apollo",
@@ -320,7 +412,7 @@ const skillData = [
   },
   {
     name: "Redis",
-    logo: "https://cdn.icon-icons.com/icons2/2415/PNG/96/redis_original_logo_icon_146368.png",
+    logo: "https://cdn.iconscout.com/icon/free/png-256/free-redis-logo-icon-download-in-svg-png-gif-file-formats--programming-langugae-freebies-pack-logos-icons-1175103.png?f=webp&w=256",
   },
   {
     name: "Jest",
@@ -352,11 +444,11 @@ const skillData = [
   },
   {
     name: "Tailwind",
-    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/96/file_type_tailwind_icon_130128.png",
+    logo: "https://seeklogo.com/images/T/tailwind-css-logo-5AD4175897-seeklogo.com.png",
   },
   {
     name: "jQuery",
-    logo: "https://cdn.icon-icons.com/icons2/2699/PNG/512/jquery_logo_icon_167804.png",
+    logo: "https://static-00.iconduck.com/assets.00/jquery-original-wordmark-icon-485x512-7kn0h2yt.png",
   },
   {
     name: "Node JS",
@@ -376,7 +468,7 @@ const skillData = [
   },
   {
     name: "MongoDB",
-    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_mongo_icon_130383.png",
+    logo: "https://www.svgrepo.com/show/331488/mongodb.svg",
   },
   {
     name: "Firestore",
@@ -384,7 +476,7 @@ const skillData = [
   },
   {
     name: "Docker",
-    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/96/file_type_docker_icon_130643.png",
+    logo: "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-512.png",
   },
   {
     name: "Redux",
@@ -396,7 +488,7 @@ const skillData = [
   },
   {
     name: "GraphQL",
-    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_graphql_icon_130564.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/512px-GraphQL_Logo.svg.png",
   },
   {
     name: "Apollo",
@@ -404,7 +496,7 @@ const skillData = [
   },
   {
     name: "Redis",
-    logo: "https://cdn.icon-icons.com/icons2/2415/PNG/96/redis_original_logo_icon_146368.png",
+    logo: "https://cdn.iconscout.com/icon/free/png-256/free-redis-logo-icon-download-in-svg-png-gif-file-formats--programming-langugae-freebies-pack-logos-icons-1175103.png?f=webp&w=256",
   },
   {
     name: "Jest",
@@ -416,11 +508,11 @@ const skillData = [
 const skillData2 = [
   {
     name: "AWS",
-    logo: "https://cdn.icon-icons.com/icons2/2407/PNG/96/aws_icon_146074.png",
+    logo: "https://seeklogo.com/images/A/amazon-web-services-aws-logo-6C2E3DCD3E-seeklogo.com.png",
   },
   {
     name: "Firebase",
-    logo: "https://cdn.icon-icons.com/icons2/2699/PNG/512/firebase_logo_icon_171157.png",
+    logo: "https://brandeps.com/logo-download/F/Firebase-logo-02.png",
   },
   {
     name: "Github",
@@ -428,11 +520,11 @@ const skillData2 = [
   },
   {
     name: "VSCode",
-    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_vscode_icon_130084.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png",
   },
   {
     name: "NPM",
-    logo: "https://cdn.icon-icons.com/icons2/2415/PNG/96/npm_original_wordmark_logo_icon_146402.png",
+    logo: "https://static-00.iconduck.com/assets.00/npm-icon-2048x2048-3xqnd60o.png",
   },
   {
     name: "Postman",
@@ -448,11 +540,11 @@ const skillData2 = [
   },
   {
     name: "AWS",
-    logo: "https://cdn.icon-icons.com/icons2/2407/PNG/96/aws_icon_146074.png",
+    logo: "https://seeklogo.com/images/A/amazon-web-services-aws-logo-6C2E3DCD3E-seeklogo.com.png",
   },
   {
     name: "Firebase",
-    logo: "https://cdn.icon-icons.com/icons2/2699/PNG/512/firebase_logo_icon_171157.png",
+    logo: "https://brandeps.com/logo-download/F/Firebase-logo-02.png",
   },
   {
     name: "Github",
@@ -460,11 +552,11 @@ const skillData2 = [
   },
   {
     name: "VSCode",
-    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_vscode_icon_130084.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png",
   },
   {
     name: "NPM",
-    logo: "https://cdn.icon-icons.com/icons2/2415/PNG/96/npm_original_wordmark_logo_icon_146402.png",
+    logo: "https://static-00.iconduck.com/assets.00/npm-icon-2048x2048-3xqnd60o.png",
   },
   {
     name: "Postman",
@@ -480,11 +572,11 @@ const skillData2 = [
   },
   {
     name: "AWS",
-    logo: "https://cdn.icon-icons.com/icons2/2407/PNG/96/aws_icon_146074.png",
+    logo: "https://seeklogo.com/images/A/amazon-web-services-aws-logo-6C2E3DCD3E-seeklogo.com.png",
   },
   {
     name: "Firebase",
-    logo: "https://cdn.icon-icons.com/icons2/2699/PNG/512/firebase_logo_icon_171157.png",
+    logo: "https://brandeps.com/logo-download/F/Firebase-logo-02.png",
   },
   {
     name: "Github",
@@ -492,11 +584,11 @@ const skillData2 = [
   },
   {
     name: "VSCode",
-    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_vscode_icon_130084.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png",
   },
   {
     name: "NPM",
-    logo: "https://cdn.icon-icons.com/icons2/2415/PNG/96/npm_original_wordmark_logo_icon_146402.png",
+    logo: "https://static-00.iconduck.com/assets.00/npm-icon-2048x2048-3xqnd60o.png",
   },
   {
     name: "Postman",
@@ -512,11 +604,11 @@ const skillData2 = [
   },
   {
     name: "AWS",
-    logo: "https://cdn.icon-icons.com/icons2/2407/PNG/96/aws_icon_146074.png",
+    logo: "https://seeklogo.com/images/A/amazon-web-services-aws-logo-6C2E3DCD3E-seeklogo.com.png",
   },
   {
     name: "Firebase",
-    logo: "https://cdn.icon-icons.com/icons2/2699/PNG/512/firebase_logo_icon_171157.png",
+    logo: "https://brandeps.com/logo-download/F/Firebase-logo-02.png",
   },
   {
     name: "Github",
@@ -524,11 +616,11 @@ const skillData2 = [
   },
   {
     name: "VSCode",
-    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_vscode_icon_130084.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png",
   },
   {
     name: "NPM",
-    logo: "https://cdn.icon-icons.com/icons2/2415/PNG/96/npm_original_wordmark_logo_icon_146402.png",
+    logo: "https://static-00.iconduck.com/assets.00/npm-icon-2048x2048-3xqnd60o.png",
   },
   {
     name: "Postman",
@@ -544,11 +636,11 @@ const skillData2 = [
   },
   {
     name: "AWS",
-    logo: "https://cdn.icon-icons.com/icons2/2407/PNG/96/aws_icon_146074.png",
+    logo: "https://seeklogo.com/images/A/amazon-web-services-aws-logo-6C2E3DCD3E-seeklogo.com.png",
   },
   {
     name: "Firebase",
-    logo: "https://cdn.icon-icons.com/icons2/2699/PNG/512/firebase_logo_icon_171157.png",
+    logo: "https://brandeps.com/logo-download/F/Firebase-logo-02.png",
   },
   {
     name: "Github",
@@ -556,11 +648,11 @@ const skillData2 = [
   },
   {
     name: "VSCode",
-    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_vscode_icon_130084.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png",
   },
   {
     name: "NPM",
-    logo: "https://cdn.icon-icons.com/icons2/2415/PNG/96/npm_original_wordmark_logo_icon_146402.png",
+    logo: "https://static-00.iconduck.com/assets.00/npm-icon-2048x2048-3xqnd60o.png",
   },
   {
     name: "Postman",
@@ -576,11 +668,11 @@ const skillData2 = [
   },
   {
     name: "AWS",
-    logo: "https://cdn.icon-icons.com/icons2/2407/PNG/96/aws_icon_146074.png",
+    logo: "https://seeklogo.com/images/A/amazon-web-services-aws-logo-6C2E3DCD3E-seeklogo.com.png",
   },
   {
     name: "Firebase",
-    logo: "https://cdn.icon-icons.com/icons2/2699/PNG/512/firebase_logo_icon_171157.png",
+    logo: "https://brandeps.com/logo-download/F/Firebase-logo-02.png",
   },
   {
     name: "Github",
@@ -588,11 +680,11 @@ const skillData2 = [
   },
   {
     name: "VSCode",
-    logo: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_vscode_icon_130084.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png",
   },
   {
     name: "NPM",
-    logo: "https://cdn.icon-icons.com/icons2/2415/PNG/96/npm_original_wordmark_logo_icon_146402.png",
+    logo: "https://static-00.iconduck.com/assets.00/npm-icon-2048x2048-3xqnd60o.png",
   },
   {
     name: "Postman",
@@ -785,12 +877,21 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 540,
+  width: "90vw", // Modal responsif
+  maxWidth: 540, // Batas maksimum lebar modal
   bgcolor: "background.paper",
   boxShadow: 24,
-  p: 4,
+  p: { xs: 2, sm: 4 }, // Padding lebih kecil di layar kecil
   borderRadius: 4,
 };
+
+const links = [
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/kresnawijaya/" },
+  { name: "Github", url: "https://github.com/kresnawijayaa" },
+  { name: "Google Mail", url: "mailto:kresnawijaya511@gmail.com" },
+  { name: "WhatsApp", url: "https://wa.me/6281314250902" },
+  { name: "✌️😁 Instagram", url: "https://www.instagram.com/kresnawijaya__/" },
+];
 
 export default function About() {
   const [open, setOpen] = React.useState(false);
@@ -800,7 +901,7 @@ export default function About() {
   return (
     <>
       <div
-        className="min-h-screen"
+        className='min-h-screen'
         style={{
           background:
             "linear-gradient(0deg, rgba(1,126,255,1) 0%, rgba(0,100,210,1) 100%)", // #017EFF (0) - #0064d2 (100)
@@ -810,20 +911,20 @@ export default function About() {
         {/* new */}
         {/* new */}
 
-        <section className="flex items-center justify-center text-center py-20">
-          <div className="mx-auto max-w-screen-xl">
+        <section className='flex items-center justify-center text-center py-20'>
+          <div className='mx-auto max-w-screen-xl'>
             <div>
-              <div className="sif-l">
-                <h1 className="sm:text-6xl text-4xl font-bold text-white text-center transition duration-300 transform hover:scale-105 sm:mx-80 mx-6">
+              <div className='sif-l'>
+                <h1 className='sm:text-6xl text-4xl font-bold text-white text-center transition duration-300 transform hover:scale-105 sm:mx-80 mx-6'>
                   Kresna Wijaya{" "}
-                  <span className="font-medium sm:text-2xl text-xl">
+                  <span className='font-medium sm:text-2xl text-xl'>
                     · he/him
                   </span>
                 </h1>
               </div>
-              <div className="sif-r">
+              <div className='sif-r'>
                 {" "}
-                <p className="text-white sm:text-lg text-sm flex-1 mt-12 sm:leading-8 leading-7 transition duration-300 transform hover:scale-105 sm:mx-40 mx-6">
+                <p className='text-white sm:text-lg text-sm flex-1 mt-12 sm:leading-8 leading-7 transition duration-300 transform hover:scale-105 sm:mx-40 mx-6'>
                   👨‍💻 a passionate software engineer from Jakarta, Indonesia.
                   Armed with a degree in Computer Science and bolstered by
                   Hacktiv8's Full Stack JavaScript bootcamp, I've refined my
@@ -839,57 +940,66 @@ export default function About() {
           </div>
         </section>
 
-        <section className="bg-white items-center justify-center text-center py-20">
-          <div className="mx-auto max-w-screen-xl sif-b">
-            <h1 className="text-4xl font-bold text-neutral-800 text-center transition duration-300 transform hover:scale-105 mx-80">
+        <section className='bg-white items-center justify-center text-center py-20'>
+          <div className='mx-auto max-w-screen-xl sif-b'>
+            <h1 className='text-4xl font-bold text-neutral-800 text-center transition duration-300 transform hover:scale-105'>
               My Tech Toolkit 🛠️
             </h1>
-            <p className="text-neutral-600 text-lg flex-1 mt-4 mb-2 leading-8 transition duration-300 transform hover:scale-105 mx-40">
+            <p className='text-neutral-600 sm:text-lg text-sm flex-1 mt-4 mb-2 sm:leading-8 leading-7 transition duration-300 transform hover:scale-105 mx-6'>
               Crafting digital experiences with a diverse skill set, where code
               and creativity merge seamlessly.
             </p>
-            <div className="slider">
-              <div className="slide-track">
+            <div className='slider'>
+              <div className='slide-track'>
                 {skillData.map((skill, index) => (
-                  <div key={index} className="slide">
+                  <div
+                    key={index}
+                    className='slide'
+                  >
                     <img
                       src={skill.logo}
                       alt={skill.name}
-                      className="skill-logo"
+                      className='skill-logo'
                     />
-                    <p className="skill-name text-sm text-neutral-500">
+                    <p className='skill-name text-sm text-neutral-500'>
                       {skill.name}
                     </p>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="slider">
-              <div className="slide-track2">
+            <div className='slider'>
+              <div className='slide-track2'>
                 {skillData2.map((skill, index) => (
-                  <div key={index} className="slide">
+                  <div
+                    key={index}
+                    className='slide'
+                  >
                     <img
                       src={skill.logo}
                       alt={skill.name}
-                      className="skill-logo"
+                      className='skill-logo'
                     />
-                    <p className="skill-name text-sm text-neutral-500">
+                    <p className='skill-name text-sm text-neutral-500'>
                       {skill.name}
                     </p>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="slider">
-              <div className="slide-track3">
+            <div className='slider'>
+              <div className='slide-track3'>
                 {skillData3.map((skill, index) => (
-                  <div key={index} className="slide">
+                  <div
+                    key={index}
+                    className='slide'
+                  >
                     <img
                       src={skill.logo}
                       alt={skill.name}
-                      className="skill-logo"
+                      className='skill-logo'
                     />
-                    <p className="skill-name text-sm text-neutral-500">
+                    <p className='skill-name text-sm text-neutral-500'>
                       {skill.name}
                     </p>
                   </div>
@@ -899,7 +1009,7 @@ export default function About() {
             <button>
               <a
                 onClick={handleOpen}
-                className="mt-6 inline-block bg-[#0965c0] hover:bg-[#3a3b92] text-white font-semibold text-md py-2 px-12 rounded-full transition duration-300 transform hover:scale-105"
+                className='mt-6 inline-block bg-[#0965c0] hover:bg-[#3a3b92] text-white font-semibold text-md py-2 px-12 rounded-full transition duration-300 transform hover:scale-105'
               >
                 View all
               </a>
@@ -907,66 +1017,67 @@ export default function About() {
             <Modal
               open={open}
               onClose={handleClose}
-              aria-labelledby="modal-modal-title"
-              aria-describedby="modal-modal-description"
+              aria-labelledby='modal-modal-title'
+              aria-describedby='modal-modal-description'
+              className='flex items-center justify-center'
             >
               <Box sx={style}>
                 <div>
-                  <div className="mb-4">
-                    <h1 className="text-neutral-800 font-bold text-md">
+                  <div className='mb-4'>
+                    <h1 className='text-neutral-800 font-bold text-md'>
                       Programming Language
                     </h1>
-                    <p className="text-neutral-600 text-md">JavaScript</p>
+                    <p className='text-neutral-600 text-md'>JavaScript</p>
                   </div>
-                  <div className="mb-4">
-                    <h1 className="text-neutral-800 font-bold text-md">
+                  <div className='mb-4'>
+                    <h1 className='text-neutral-800 font-bold text-md'>
                       Front End
                     </h1>
-                    <p className="text-neutral-600 text-md">
+                    <p className='text-neutral-600 text-md'>
                       HTML5, CSS, Vue JS, React JS, React Native, Tailwind,
                       jQuery
                     </p>
                   </div>
-                  <div className="mb-4">
-                    <h1 className="text-neutral-800 font-bold text-md">
+                  <div className='mb-4'>
+                    <h1 className='text-neutral-800 font-bold text-md'>
                       Back End
                     </h1>
-                    <p className="text-neutral-600 text-md">
+                    <p className='text-neutral-600 text-md'>
                       Node JS, Express JS, Sequelize
                     </p>
                   </div>
-                  <div className="mb-4">
-                    <h1 className="text-neutral-800 font-bold text-md">
+                  <div className='mb-4'>
+                    <h1 className='text-neutral-800 font-bold text-md'>
                       Databases
                     </h1>
-                    <p className="text-neutral-600 text-md">
+                    <p className='text-neutral-600 text-md'>
                       PostgreSQL, MongoDB, Firestore
                     </p>
                   </div>
-                  <div className="mb-4">
-                    <h1 className="text-neutral-800 font-bold text-md">
+                  <div className='mb-4'>
+                    <h1 className='text-neutral-800 font-bold text-md'>
                       Others
                     </h1>
-                    <p className="text-neutral-600 text-md">
+                    <p className='text-neutral-600 text-md'>
                       GraphQL, Jest, Pinia, Redux, JWT, Docker, AWS, Firebase,
                       Vite, Postman, NPM, VSCode, Github, Ubuntu
                     </p>
                   </div>
                   <div>
-                    <h1 className="text-neutral-800 font-bold text-md">
+                    <h1 className='text-neutral-800 font-bold text-md'>
                       Design Tools
                     </h1>
-                    <p className="text-neutral-600 text-md">
+                    <p className='text-neutral-600 text-md'>
                       Figma, Whimsical, Miro, Adobe Illustrator, Adobe
                       Photoshop, Adobe Premiere Pro, Adobe After Effect
                     </p>
                   </div>
                 </div>
-                <div className="flex justify-end mt-6">
+                <div className='flex justify-end mt-6'>
                   <button>
                     <a
                       onClick={handleClose}
-                      className="inline-block bg-[#0965c0] hover:bg-[#3a3b92] text-white font-semibold text-md py-2 px-8 rounded-full transition duration-300 transform hover:scale-105"
+                      className='inline-block bg-[#0965c0] hover:bg-[#3a3b92] text-white font-semibold text-md py-2 px-8 rounded-full transition duration-300 transform hover:scale-105'
                     >
                       Close
                     </a>
@@ -977,55 +1088,59 @@ export default function About() {
           </div>
         </section>
 
-        <section className="py-20">
-          <div className="mx-auto max-w-screen-xl sif-b">
-            <div className="grid grid-cols-2 px-24">
+        <section className='py-20'>
+          <div className='mx-auto max-w-screen-xl sif-b'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 px-6 sm:px-24 gap-12'>
               <div>
-                <div className="sif-l">
-                  <h1 className=" text-4xl font-bold text-white transition duration-300 transform hover:scale-105">
+                <div className='sif-l'>
+                  <h1 className=' text-4xl font-bold text-white transition duration-300 transform hover:scale-105'>
                     Education &
                   </h1>
-                  <h1 className=" text-4xl font-bold text-white transition duration-300 transform hover:scale-105">
+                  <h1 className=' text-4xl font-bold text-white transition duration-300 transform hover:scale-105'>
                     Experience 🎓💻
                   </h1>
 
-                  <div className="flex mt-16 transition duration-300 transform hover:scale-105">
-                    <img
-                      src="https://media.licdn.com/dms/image/D560BAQEKFoWgJid8QQ/company-logo_100_100/0/1681278866452?e=1704326400&v=beta&t=NPQAvyVJAsge6uCvO8X8kk5DD8vYg_ce4nJik5V1Jfk"
-                      alt=""
-                      className="w-[52px] h-[52px] rounded-md mr-4 mt-1 object-cover"
-                    />
+                  <div className='flex mt-16 transition duration-300 transform hover:scale-105'>
+                    <div className='mr-4 w-[60px] h-[60px] bg-white flex items-center justify-center rounded-full shadow-md aspect-square'>
+                      <img
+                        src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyVF6lDvLC4AMbsZ4t2Ez6pehN3UflXBIuqA&s'
+                        alt=''
+                        className='w-[48px] h-[48px] object-cover rounded-full'
+                      />
+                    </div>
                     <div>
-                      <h1 className="text-white font-bold text-xl">
+                      <h1 className='text-white font-bold text-xl'>
                         Hacktiv8 Indonesia
                       </h1>
-                      <p className="text-white text-sm">
+                      <p className='text-white text-sm'>
                         Full Stack JavaScript Immersive Program{" "}
                         <a
-                          href="https://drive.google.com/file/d/1u5NhylOaWjlB5Rih36s-QBvtkrnE3zkV/view?usp=sharing"
-                          className="text-white underline italic"
-                          target="_blank"
+                          href='https://drive.google.com/file/d/1u5NhylOaWjlB5Rih36s-QBvtkrnE3zkV/view?usp=sharing'
+                          className='text-white underline italic'
+                          target='_blank'
                         >
-                          (Transcript)
+                          (Honor Award - Transcript)
                         </a>
                       </p>
-                      <p className="text-white text-sm">
+                      <p className='text-white text-sm'>
                         June 2023 - Sept 2023
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex mt-8 transition duration-300 transform hover:scale-105">
-                    <img
-                      src="https://media.licdn.com/dms/image/C560BAQGnhsFwo9f3vg/company-logo_100_100/0/1537458629770?e=1704326400&v=beta&t=MbIjwWB-VC0lY4CpCaZlNFs3_PF_fhwssMtmZt6vJGM"
-                      alt=""
-                      className="w-[52px] h-[52px] rounded-md mr-4 mt-1 object-cover"
-                    />
+                  <div className='flex mt-8 transition duration-300 transform hover:scale-105'>
+                    <div className='mr-4 w-[60px] h-[60px] bg-white flex items-center justify-center rounded-full shadow-md aspect-square'>
+                      <img
+                        src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1rPL4qIuqao4lZID9NcJEuL_XQWsiWrZRCQ&s'
+                        alt=''
+                        className='w-[40px] h-[40px] object-cover rounded-xl'
+                      />
+                    </div>
                     <div>
-                      <h1 className="text-white font-bold text-xl">
+                      <h1 className='text-white font-bold text-xl'>
                         Udayana University
                       </h1>
-                      <p className="text-white text-sm">
+                      <p className='text-white text-sm'>
                         Bachelor's degree, Computer Science (GPA 3.66/4.00)
                         {/* <a
                       href="https://drive.google.com/file/d/1ajwIvq-KuMkBMJAmvfw5SWjrRjYNrDNs/view?usp=sharing"
@@ -1035,53 +1150,53 @@ export default function About() {
                       (Transcript)
                     </a> */}
                       </p>
-                      <p className="text-white text-sm">2018 - 2022</p>
+                      <p className='text-white text-sm'>2018 - 2022</p>
                     </div>
                   </div>
                 </div>
               </div>
               <div>
-                <div className="space-y-6">
+                <div className='space-y-6'>
                   {experienceData.map((item) => (
                     <details
                       key={item.id}
-                      className="transition duration-300 transform hover:scale-105 overflow-hidden rounded border border-gray-300 [&_summary::-webkit-details-marker]:hidden"
+                      className='transition duration-300 transform hover:scale-105 overflow-hidden rounded border border-gray-300 [&_summary::-webkit-details-marker]:hidden'
                     >
-                      <summary className="flex cursor-pointer items-center justify-between gap-2 bg-white p-4 text-gray-900 transition">
-                        <div className="flex">
+                      <summary className='flex cursor-pointer items-center justify-between gap-2 bg-white p-4 text-gray-900 transition'>
+                        <div className='flex'>
                           <img
                             src={item.logoUrl}
-                            alt=""
-                            className="inline-block rounded w-[50px] h-[50px] mb-2"
+                            alt=''
+                            className='inline-block rounded w-[50px] h-[50px] mb-2'
                           />
-                          <div className="flex-1 ml-4">
-                            <h1 className="text-neutral-800 font-semibold text-md">
+                          <div className='flex-1 ml-4'>
+                            <h1 className='text-neutral-800 font-semibold text-md'>
                               {item.companyName}
                             </h1>
-                            <p className="text-neutral-600 text-sm font-normal">
+                            <p className='text-neutral-600 text-sm font-normal'>
                               {item.role} ({item.date})
                             </p>
                           </div>
                         </div>
-                        <span className="transition group-open:-rotate-180">
+                        <span className='transition group-open:-rotate-180'>
                           <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth="1.5"
-                            stroke="currentColor"
-                            className="h-4 w-4"
+                            xmlns='http://www.w3.org/2000/svg'
+                            fill='none'
+                            viewBox='0 0 24 24'
+                            strokeWidth='1.5'
+                            stroke='currentColor'
+                            className='h-4 w-4'
                           >
                             <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                              strokeLinecap='round'
+                              strokeLinejoin='round'
+                              d='M19.5 8.25l-7.5 7.5-7.5-7.5'
                             />
                           </svg>
                         </span>
                       </summary>
-                      <div className="border-t border-gray-200 bg-white p-4">
-                        <p className="text-neutral-600 text-sm font-normal mt-1 leading-6">
+                      <div className='border-t border-gray-200 bg-white p-4'>
+                        <p className='text-neutral-600 text-sm font-normal mt-1 leading-6'>
                           {item.description}
                         </p>
                       </div>
@@ -1093,36 +1208,39 @@ export default function About() {
           </div>
         </section>
 
-        <section className="bg-white flex items-center justify-center text-center py-20">
-          <div className="mx-auto max-w-screen-xl">
+        {/* <section className='bg-white flex items-center justify-center text-center py-20'>
+          <div className='mx-auto max-w-screen-xl'>
             <div>
-              <div className="sif-l">
-                <h1 className=" text-4xl font-bold text-neutral-800 text-center transition duration-300 transform hover:scale-105 mx-80">
+              <div className='sif-l'>
+                <h1 className=' text-4xl font-bold text-neutral-800 text-center transition duration-300 transform hover:scale-105 mx-80'>
                   Certifications 🏆
                 </h1>
-                <p className="text-neutral-600 text-lg flex-1 mt-4 mb-2 leading-8 transition duration-300 transform hover:scale-105 mx-40">
+                <p className='text-neutral-600 text-lg flex-1 mt-4 mb-2 leading-8 transition duration-300 transform hover:scale-105 mx-40'>
                   Unlocking the digital realm with my coding certifications.
                 </p>
               </div>
-              <div className="sif-r">
-                <ul className="grid gap-6 mt-12 lg:grid-cols-5 px-8">
+              <div className='sif-r'>
+                <ul className='grid gap-6 mt-12 lg:grid-cols-5 px-8'>
                   {certificatesData.map((certificate, index) => (
                     <li
                       key={index}
-                      className="transition duration-300 transform hover:scale-105"
+                      className='transition duration-300 transform hover:scale-105'
                     >
-                      <a href={certificate.link} target="_blank">
+                      <a
+                        href={certificate.link}
+                        target='_blank'
+                      >
                         <img
                           src={certificate.photo}
-                          alt=""
-                          className="h-[160px]"
+                          alt=''
+                          className='h-[160px]'
                         />
 
-                        <div className="pt-1">
-                          <p className="text-neutral-800 font-bold text-md hover:underline line-clamp-1">
+                        <div className='pt-1'>
+                          <p className='text-neutral-800 font-bold text-md hover:underline line-clamp-1'>
                             {certificate.name}
                           </p>
-                          <p className="text-neutral-600 text-sm transition duration-300 transform hover:scale-105">
+                          <p className='text-neutral-600 text-sm transition duration-300 transform hover:scale-105'>
                             {certificate.issuer}
                           </p>
                         </div>
@@ -1133,52 +1251,69 @@ export default function About() {
               </div>
             </div>
           </div>
+        </section> */}
+        <section className='bg-white flex items-center justify-center text-center py-20'>
+          <div className='mx-auto max-w-screen-xl px-6'>
+            {/* Header Section */}
+            <div>
+              <h1 className='text-4xl font-bold text-neutral-800 transition duration-300 transform hover:scale-105'>
+                Certifications 🏆
+              </h1>
+              <p className='text-neutral-600 text-lg mt-4 mb-6 leading-8 transition duration-300 transform hover:scale-105'>
+                Unlocking the digital realm with my coding certifications.
+              </p>
+            </div>
+
+            {/* Certification List */}
+            <div className='grid grid-cols-1 sm:grid-cols-2 gap-8 text-left'>
+              {certifications.map((cert, index) => (
+                <div key={index}>
+                  <h3 className='text-xl font-semibold text-neutral-800'>
+                    {cert.title}
+                  </h3>
+                  <ul className='list-disc list-inside text-neutral-600'>
+                    {cert.items.map((item, i) => (
+                      <li key={i}>
+                        {item.name} -{" "}
+                        <a
+                          href={item.link}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          className='text-blue-500 underline'
+                        >
+                          Certificate
+                        </a>{" "}
+                        - Issued: {item.issued}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
-        <section className="py-20">
-          <div className="mx-auto max-w-screen-xl sif-b">
+        <section className='py-20'>
+          <div className='mx-auto max-w-screen-xl sif-b'>
             <div>
-              <div className="sif-l">
-                <h1 className="text-4xl font-bold text-white text-center transition duration-300 transform hover:scale-105 mx-80">
+              <div className='sif-l'>
+                <h1 className='text-4xl font-bold text-white text-center transition duration-300 transform hover:scale-105'>
                   Keep in touch! ✨
                 </h1>
               </div>
-              <div className="sif-r flex text-center justify-center gap-12 mt-4 mb-2">
-                <a
-                  href="https://www.linkedin.com/in/kresnawijaya/"
-                  target="_blank"
-                  className="text-white text-lg mt-12 leading-8 transition duration-300 transform hover:scale-110 hover:border-b border-white"
-                >
-                  <button>LinkedIn ↗</button>
-                </a>
-                <a
-                  href="https://github.com/kresnawijayaa"
-                  target="_blank"
-                  className="text-white text-lg mt-12 leading-8 transition duration-300 transform hover:scale-110 hover:border-b border-white"
-                >
-                  <button>Github ↗</button>
-                </a>
-                <a
-                  href="mailto:kresnawijaya511@gmail.com"
-                  target="_blank"
-                  className="text-white text-lg mt-12 leading-8 transition duration-300 transform hover:scale-110 hover:border-b border-white"
-                >
-                  <button>Googe Mail ↗</button>
-                </a>
-                <a
-                  href="https://wa.me/6281314250902"
-                  target="_blank"
-                  className="text-white text-lg mt-12 leading-8 transition duration-300 transform hover:scale-110 hover:border-b border-white"
-                >
-                  <button>WhatsApp ↗</button>
-                </a>
-                <a
-                  href="https://www.instagram.com/kresnawijaya__/"
-                  target="_blank"
-                  className="text-white text-lg mt-12 leading-8 transition duration-300 transform hover:scale-110 hover:border-b border-white"
-                >
-                  <button>✌️😁 Instagram ↗</button>
-                </a>
+              <div className='flex flex-col sm:flex-row items-center justify-center sm:gap-16 gap-8 mt-16 mb-2'>
+                {links.map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.url}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='text-white text-lg transition duration-300 transform hover:scale-110 hover:border-b border-white flex items-center gap-1'
+                  >
+                    <button>{link.name} </button>
+                    <FiExternalLink size={14} />
+                  </a>
+                ))}
               </div>
 
               {/* <div // LinkedIn Badges

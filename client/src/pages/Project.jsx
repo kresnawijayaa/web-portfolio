@@ -107,78 +107,80 @@ export default function Project() {
   return (
     <>
       <div
-        className="min-h-screen"
+        className='min-h-screen'
         style={{
           background:
             "linear-gradient(0deg, rgba(1, 126, 255, 1) 0%, rgba(0, 100, 210, 1) 100%)",
         }}
       >
-        <section className="flex items-center justify-center text-center py-20">
-          <div className="mx-auto max-w-screen-xl">
+        <section className='items-center justify-center text-center py-20'>
+          <div className='mx-auto max-w-screen-xl sif-b'>
             <div>
               <div>
-                <div className="sif-l">
-                  <h1 className="text-5xl font-bold text-white text-center transition duration-300 transform hover:scale-105 mx-60">
+                <div className='sif-l'>
+                  <h1 className='text-4xl font-bold text-white text-center transition duration-300 transform hover:scale-105 mx-10'>
                     My Digital Creations 🌟
                   </h1>
                 </div>
-                <div className="sif-r">
-                  <p className="text-white text-lg flex-1 mt-6 mb-2 leading-8 transition duration-300 transform hover:scale-105 mx-40">
+                <div className='sif-r'>
+                  <p className='text-white  sm:text-lg text-sm flex-1 mt-4 mb-2 sm:leading-8 leading-7 transition duration-300 transform hover:scale-105 mx-6'>
                     Welcome to my digital realm. Here, you'll find a showcase of
                     my coding projects and creative endeavors.
                   </p>
                 </div>
               </div>
-              <div className="sif-b">
-                <ul className="grid gap-12 mt-12 px-8">
+              <div className='sif-b'>
+                <ul className='grid gap-12 mt-12 px-8'>
                   {projectsData.map((project, index) => (
                     <article
-                      className="flex bg-white transition hover:shadow-xl transition duration-300 transform hover:scale-105 mx-20"
+                      className='flex bg-white transition hover:shadow-xl transition duration-300 transform hover:scale-105'
                       key={index}
                     >
-                      <div className="rotate-180 p-2 [writing-mode:_vertical-lr]">
-                        <time className="flex items-center justify-between gap-4 text-xs font-bold uppercase text-gray-900">
+                      <div className='rotate-180 p-2 [writing-mode:_vertical-lr]'>
+                        <time className='flex items-center justify-between gap-4 text-xs font-bold uppercase text-gray-900'>
                           <span>{project.year}</span>
-                          <span className="w-px flex-1 bg-gray-900/10"></span>
+                          <span className='w-px flex-1 bg-gray-900/10'></span>
                           <span>{project.month}</span>
                         </time>
                       </div>
-                      <div className="hidden sm:block sm:basis-80">
-                        <img
-                          alt="Project"
-                          src={project.imageSrc}
-                          className="h-full w-full object-cover"
-                        />
-                      </div>
-                      <div className="flex flex-1 flex-col justify-between">
-                        <div className="border-s border-gray-900/10 p-8 sm:border-l-transparent text-left">
-                          <div className="mb-4">
-                            <h2 className="text-2xl font-semibold text-neutral-800   mb-2">
-                              {project.title}
-                            </h2>
-                            <p className="text-sm leading-6 text-neutral-600 line-clamp-4">
-                              {project.description}
-                            </p>
-                          </div>
-                          <div className="flex gap-2">
-                            {project.technologies.map((tech, techIndex) => (
-                              <div
-                                key={techIndex}
-                                className="inline-block bg-[#0965c0] hover:bg-[#3a3b92] text-white font-medium py-2 px-3 text-xs rounded-full transition duration-300 transform hover:scale-105"
-                              >
-                                <p>{tech}</p>
-                              </div>
-                            ))}
-                          </div>
+                      <div className="sm:flex">
+                        <div className='basis-80'>
+                          <img
+                            alt='Project'
+                            src={project.imageSrc}
+                            className='h-full w-full object-cover'
+                          />
                         </div>
-                        <div className="sm:flex sm:items-end sm:justify-end">
-                          <a
-                            target="_block"
-                            href={project.githubLink}
-                            className="block bg-neutral-800 px-5 py-3 text-center text-xs font-bold uppercase text-white transition hover:bg-neutral-900 hover:underline"
-                          >
-                            View Detail
-                          </a>
+                        <div className='flex flex-1 flex-col justify-between'>
+                          <div className='border-s border-gray-900/10 p-8 sm:border-l-transparent text-left'>
+                            <div className='mb-4'>
+                              <h2 className='text-2xl font-semibold text-neutral-800   mb-2'>
+                                {project.title}
+                              </h2>
+                              <p className='text-sm leading-6 text-neutral-600 line-clamp-4'>
+                                {project.description}
+                              </p>
+                            </div>
+                            <div>
+                              {project.technologies.map((tech, techIndex) => (
+                                <div
+                                  key={techIndex}
+                                  className='m-1 inline-block bg-[#0965c0] hover:bg-[#3a3b92] text-white font-medium py-2 px-3 text-xs rounded-full transition duration-300 transform hover:scale-105'
+                                >
+                                  <p>{tech}</p>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                          <div className='sm:flex sm:items-end sm:justify-end'>
+                            <a
+                              target='_block'
+                              href={project.githubLink}
+                              className='block bg-neutral-800 px-5 py-3 text-center text-xs font-bold uppercase text-white transition hover:bg-neutral-900 hover:underline'
+                            >
+                              View Detail
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </article>

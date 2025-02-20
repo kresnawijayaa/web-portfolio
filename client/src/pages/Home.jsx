@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <div
-      className="h-[calc(100vh-100px)]" // Ganti 200px dengan total tinggi header + footer
+      className="" // Ganti 200px dengan total tinggi header + footer
       style={{
         background:
           "linear-gradient(0deg, rgba(1,126,255,1) 0%, rgba(0,100,210,1) 100%)", // #017EFF (0) - #0064d2 (100)
@@ -60,9 +60,7 @@ export default function Home() {
             <div className="sif-b">
               <div className="sm:mt-20 mt-12 sm:px-4 sm:py-8 px-2 py-4 border border-2 sm:rounded-full rounded-3xl transition duration-300 transform hover:scale-105">
                 <p className="text-white sm:text-lg text-sm flex-1 sm:mx-16 mt-2 transition duration-300 transform hover:scale-105">
-                  🚀 Code explorer with an artistic flair 🎨 | Ex-designer
-                  turned passionate coder 💻 | Cat lover 🐱 | Currently addicted
-                  to running 🏃‍♂️
+                🚀 A programmer with an artistic touch 🎨 | Turning code into visually appealing experiences 💻 | Always greets every cat I meet 🐱 | Recreational runner on a mission—chasing that sub-25 min 5K 🏃‍♂️🔥
                 </p>
 
                 <div className="sm:mt-8 mt-6 flex gap-6 sm:gap-8 justify-center">
