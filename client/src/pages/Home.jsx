@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <div
-      className="" // Ganti 200px dengan total tinggi header + footer
+      className="min-h-screen" // Ganti 200px dengan total tinggi header + footer
       style={{
         background:
           "linear-gradient(0deg, rgba(1,126,255,1) 0%, rgba(0,100,210,1) 100%)", // #017EFF (0) - #0064d2 (100)
