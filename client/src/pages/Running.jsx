@@ -54,7 +54,7 @@ export default function RunningQuestionnaire() {
           </label>
           <input
             type='number'
-            placeholder='Masukkan jarak (km)'
+            placeholder='Masukkan angka aja (contoh: 20)'
             className='w-full p-2 border rounded focus:ring-2 focus:ring-blue-400'
             value={distance}
             onChange={(e) => setDistance(e.target.value)}
@@ -72,7 +72,7 @@ export default function RunningQuestionnaire() {
           />
 
           <label className='pt-8 block text-gray-600'>
-            Kalau abis CFD biasanya suka makan dimana?
+            Kalau abis CFD biasanya suka/pernah makan dimana?
           </label>
           <input
             type='text'
