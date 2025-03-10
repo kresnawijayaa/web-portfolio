@@ -10,7 +10,8 @@ export default function RunningQuestionnaire() {
   const sendWhatsApp = () => {
     const message =
       `hi, kress! ini gue ${nickname} hehehe%0A%0A` +
-      `pankapan gue mau dong ikut lari di cfd abis puasa, ${distance} km ajaaa, pace santai-santai aja di ${pace}, nanti abistu kita makan di ${eatPlace} yaaa😅`;
+      `nanti gue mau dong ikut lari di cfd abis puasa, ${distance} km ajaaa, pacenya santai-santai aja di ${pace}%0A%0A` +
+      `pankapan abis lari kita cobain makan di ${eatPlace} yaaa😅`;
     const waLink = `https://wa.me/6281314250902?text=${message}`;
     window.open(waLink, "_blank");
   };
