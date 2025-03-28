@@ -5,13 +5,16 @@ export default function RunningQuestionnaire() {
   const [everRunCFD, setEverRunCFD] = useState("");
   const [distance, setDistance] = useState("");
   const [pace, setPace] = useState("");
+  const [activity, setActivity] = useState("");
+  const [customActivity, setCustomActivity] = useState("");
   const [eatPlace, setEatPlace] = useState("");
 
   const sendWhatsApp = () => {
+    const finalActivity = activity === "lainnya" ? customActivity : activity;
     const message =
-      `hi, kress! ini gue ${nickname} hehehe%0A%0A` +
-      `nanti gue mau dong ikut lari di cfd abis puasa, ${distance} km ajaaa, pacenya santai-santai aja di ${pace}%0A%0A` +
-      `pankapan abis lari kita cobain makan di ${eatPlace} yaaa😅`;
+      `hi, kress! ini aku ${nickname} hehehe%0A%0A` +
+      `nanti abis puasa cfd yuk kalo lagi gak ada arc, ${distance} km ajaaa, pacenya santai-santai aja di ${pace}%0A%0A` +
+      `nahh abis lari kita ${finalActivity} yuk ke ${eatPlace}😅`;
     const waLink = `https://wa.me/6281314250902?text=${message}`;
     window.open(waLink, "_blank");
   };
@@ -33,17 +36,14 @@ export default function RunningQuestionnaire() {
           />
 
           <label className='pt-8 block text-gray-600'>
-            Pernah long run di CFD Sudirman?
+            Pernah lari di CFD Sudirman?
           </label>
           <select
             className='w-full p-2 border rounded focus:ring-2 focus:ring-blue-400'
             value={everRunCFD}
             onChange={(e) => setEverRunCFD(e.target.value)}
           >
-            <option
-              value=''
-              disabled
-            >
+            <option value='' disabled>
               Pilih salah satu
             </option>
             <option value='Tidak'>Tidak</option>
@@ -51,33 +51,60 @@ export default function RunningQuestionnaire() {
           </select>
 
           <label className='pt-8 block text-gray-600'>
-            Kalau long run biasanya berapa km?
+            Kalau lari biasanya berapa km?
           </label>
           <input
             type='number'
-            placeholder='Masukkan angka aja (contoh: 20)'
+            placeholder='Masukkan angka aja (contoh: 10)'
             className='w-full p-2 border rounded focus:ring-2 focus:ring-blue-400'
             value={distance}
             onChange={(e) => setDistance(e.target.value)}
           />
 
           <label className='pt-8 block text-gray-600'>
-            Kalau long run biasanya pace berapa?
+            Kalau lari biasanya pace berapa?
           </label>
           <input
             type='text'
-            placeholder='Masukkan pace (contoh: 6:30)'
+            placeholder='Masukkan pace (contoh: 7:30)'
             className='w-full p-2 border rounded focus:ring-2 focus:ring-blue-400'
             value={pace}
             onChange={(e) => setPace(e.target.value)}
           />
 
           <label className='pt-8 block text-gray-600'>
-            Kalau abis CFD biasanya suka/pernah makan dimana?
+            Kalau abis CFD biasanya sukanya ngapain?
+          </label>
+          <select
+            className='w-full p-2 border rounded focus:ring-2 focus:ring-blue-400'
+            value={activity}
+            onChange={(e) => setActivity(e.target.value)}
+          >
+            <option value='' disabled>
+              Pilih salah satu
+            </option>
+            <option value='makan'>Makan</option>
+            <option value='ngopi'>Ngopi</option>
+            <option value='jalan-jalan'>Jalan-jalan</option>
+            <option value='lainnya'>Lainnya (isi sendiri)</option>
+          </select>
+
+          {activity === "lainnya" && (
+            <input
+              type='text'
+              placeholder='Masukkan aktivitas lain'
+              className='w-full p-2 border rounded focus:ring-2 focus:ring-blue-400'
+              value={customActivity}
+              onChange={(e) => setCustomActivity(e.target.value)}
+            />
+          )}
+
+          <label className='pt-8 block text-gray-600'>
+            Kalau abis CFD biasanya {activity === "lainnya" ? customActivity : activity} dimana?
           </label>
           <input
             type='text'
-            placeholder='Masukkan tempat makan favorit'
+            placeholder='Masukkan tempat favorit'
             className='w-full p-2 border rounded focus:ring-2 focus:ring-blue-400'
             value={eatPlace}
             onChange={(e) => setEatPlace(e.target.value)}
